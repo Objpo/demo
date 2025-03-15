@@ -1,30 +1,29 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title></title>
-    
+
+    <title>du an</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="/du an 1/css/bai.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="du an 1/css/bai.css">
+</head>
+
+<body>
+
 <!--header-->
-<!--header-->
-<header id="banner" class="fixed-top">
+<header id="site-header" class="fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark stroke">
-            <h1><a class="navbar-brand" href="index.html">
-                    H&T
-                </a></h1>
-
+            <h1><a class="navbar-brand" href="index.html">H&T</a></h1>
             <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
                 data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,18 +32,30 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ml-auto mr-5">
+                <ul class="navbar-nav ml-auto mr-5 align-items-center">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item @@product">
+                        <a class="nav-link" href="product.html">Products</a>
                     </li>
                     <li class="nav-item @@about__active">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+                    
                     <li class="nav-item @@services__active">
                         <a class="nav-link" href="services.html">Services</a>
                     </li>
+
                     <li class="nav-item @@contact__active">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item cart-container">
+                        <div class="cart-icon">
+                            <a href="#cart" class="nav-link">
+                                <span class="fa fa-shopping-cart"></span>
+                            </a>
+                        </div>
                     </li>
                     <nav class="ml-lg-3">
                         <div class="search-bar">
@@ -55,1150 +66,1115 @@
                             </form>
                         </div>
                     </nav>
+                    <div id="cart-items" class="cart-items">
+                        <h6>The cart</h6>
+                        <ul id="cart-list"></ul>
+                        <div id="cart-total" class="mt-2">Total amount: $0</div>
+                        <button id="clear-cart" class="btn btn-danger mt-3">Clear the entire cart.</button>
+                    </div>
                 </ul>
             </div>
-            <!-- toggle switch for light and dark theme & cart button -->
-            <div class="mobile-position d-flex align-items-center">
-                <nav class="navigation">
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox">
-                            <div class="mode-container py-1">
-                                <i class="gg-sun"></i>
-                                <i class="gg-moon"></i>
-                            </div>
-                        </label>
-                    </div>
-                </nav>
-                <!-- Nút giỏ hàng nằm cạnh nút chuyển đổi theme -->
-                <div class="cart-icon ml-3">
-                    <a href="#cart" class="btn btn-outline-light">
-                        <span class="fa fa-shopping-cart"></span>
-                    </a>
-                </div>
-
-                <!-- Khu vực giỏ hàng cố định -->
-                <div id="cart-items" class="cart-items"
-                    style="position: fixed; bottom: 20px; right: 20px; background: white; color: black; padding: 15px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); min-width: 250px; max-height: 300px; overflow-y: auto; z-index: 1000;">
-                    <h6>Giỏ hàng</h6>
-                    <ul id="cart-list" style="list-style: none; padding: 0;"></ul>
-                    <button id="clear-cart" class="btn btn-danger mt-3" style="width: 100%;">Xóa đơn hàng</button>
-                </div>
-          
-                
-            <!-- //toggle switch for light and dark theme & cart button -->
         </nav>
     </div>
 </header>
-<!--/header-->
-<!-- banner section -->
-<section id="home" class="w3l-banner py-5">
-    <div class="container py-lg-5 mt-lg-5">
-        <div class="py-lg-4 my-2">
-            <div class="banner-info-grid mt-lg-5">
-                <h3 class="mb-4">Creative made Stylist</h3>
-                <section id="bottom" class="demo">
-                    <a href="#bottom"><span></span>Scroll</a>
-                  </section>
+    <!-- banner section -->
+    <section id="home" class="w3l-banner py-5">
+        <div class="container py-lg-5 mt-lg-5">
+            <div class="py-lg-4 my-2">
+                <div class="banner-info-grid mt-lg-5">
+                    <h3 class="mb-4">Creative made Stylist</h3>
+                    <section id="bottom" class="demo">
+                        <a href="#bottom"><span></span>Scroll</a>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- //banner section -->
-<!-- /bottom-grids-->
-<section class="w3l-bottom-grids-6 py-5" id="bottom">
-    <div class="container py-lg-5 py-md-4 py-2">
-        <h3 class="title-big text-center mb-5">Best Seller</h3>
-        <div class="grids-area-hny main-cont-wthree-fea row">
-            <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                <div class="area-box">
-                    <figure>
-                        <img src="img/giày 2.jpg" alt="product" class="img-fluid" />
-                        <h4><a href="#feature" class="title-head">Nike Court Air Zoom Vapor Pro</a></h4>
-                        <p class="">The shoe's form features extremely sturdy and meticulous stitching that satisfies
-                            all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
-                        <p class="price"><strong>Price: $120</strong></p>
-                        <div class="button-group mt-3">
-                            <button class="btn btn-primary btn-buy">Buy</button>
-                            <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                data-target="#bestSellerModal1">View</button>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                <div class="area-box">
-                    <figure>
-                        <img src="img/jordan 11.jpg" alt="product" class="img-fluid" />
-                        <h4><a href="#feature" class="title-head">Jordan 11 Space Jam</a></h4>
-                        <p class="">The shoe's form features extremely sturdy and meticulous stitching that satisfies
-                            all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
-                        <p class="price"><strong>Price: $220</strong></p>
-                        <div class="button-group mt-3">
-                            <button class="btn btn-primary btn-buy">Buy</button>
-                            <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                data-target="#bestSellerModal2">View</button>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                <div class="area-box">
-                    <figure>
-                        <img src="img/giay 3.jpg" alt="product" class="img-fluid" />
-                        <h4><a href="#feature" class="title-head">Nike Air Force 1 '07 LV8</a></h4>
-                        <p class="">This shoe model retains the distinctive features of the Air Force 1 but with updated
-                            details, suitable for both sports and street fashion styles.</p>
-                        <p class="price"><strong>Price: $110</strong></p>
-                        <div class="button-group mt-3">
-                            <button class="btn btn-primary btn-buy">Buy</button>
-                            <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                data-target="#bestSellerModal3">View</button>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Modals cho Best Seller -->
-<div class="modal fade" id="bestSellerModal1" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/giày 2.jpg" alt="Nike Court Air Zoom Vapor Pro" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="bestSellerModal2" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel2"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/jordan 11.jpg" alt="Jordan 11 Space Jam" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="bestSellerModal3" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel3"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/giay 3.jpg" alt="Nike Air Force 1 '07 LV8" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //bottom-grids-->
-<script src="/du an 1/js/bootstrap.min.js"></script>
-<script src="/du an 1/js/jquery-3.3.1.min.js"></script>
-<!-- //bottom-grids-->
-<!--//gallery1-->
-<section class="w3l-portfolio-8 py-5">
-    <div class="portfolio-main py-lg-5 py-md-4 py-2">
-        <div class="container">
-            <!-- Tiêu đề Products -->
-            <div class="col-12 text-center mb-4">
-                <h3 class="title-big">Male Products</h3>
-                <p class="title-big">Male Products</p>
-            <div class="row galler-top">
-                <!-- Ảnh 1 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike zoom fly.jpg" alt="product" class="img-fluid" />
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Air Zoom Fly 3</a>
-                            <p class="price"><strong>Price: $100</strong></p>
-                            <!-- Thêm nút Mua và Xem -->
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal1">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 2 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike pegasus.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Air Zoom Pegasus 40</a>
-                             <p class="price"><strong>Price: $157</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal2">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 3 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike zoom vapo.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike ZoomX Vaporfly Next%</a>
-                            <p class="price"><strong>Price: $148</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal3">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 4 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike air mã.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Air Max 95</a>
-                            <p class="price"><strong>Price: $190</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal4">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 5 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/new balance.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">New Balance 990v4</a>
-                            <p class="price"><strong>Price: $209,99</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal5">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 6 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/balencia.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Balenciaga Triple S</a>
-                            <p class="price"><strong>Price: $1100</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal6">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 7 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike retro.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Air Jordan 4 Retro</a>
-                            <p class="price"><strong>Price: $215</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal7">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 8 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/puma  thunder.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Puma Thunder Spectra</a>
-                            <p class="price"><strong>Price: $120.00</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#imageModal8">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--//gallery1-->
-
-<!-- Modals cho từng ảnh -->
-<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike zoom fly.jpg" alt="UI experience" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike pegasus.jpg" alt="Wordpress" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike zoom vapo.jpg" alt="Ecommerce" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike air mã.jpg" alt="Headphones" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal5" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel5"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/new balance.jpg" alt="Mobile app" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal6" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel6"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/balencia.jpg" alt="Modern Ideas" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal7" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel7"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike retro.jpg" alt="Creativity" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="imageModal8" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel8"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/puma  thunder.jpg" alt="Fashion design" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--//gallery2-->
-<section class="w3l-portfolio-8 py-5" id="moreservices">
-    <div class="portfolio-main py-lg-5 py-md-4 py-2">
-        <div class="container">
-            <!-- Tiêu đề More Products -->
-            <div class="col-12 text-center mb-4">
-                <h3 class="title-big">  Female Products</h3>
-                <p class="title-big">   Female Products</p>
-            </div>
-            <div class="row galler-top">
-                <!-- Ảnh 1 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nike winflo.jpg" alt="product" class="img-fluid" />
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Winflo 11</a>
+    <!-- //banner section -->
+    <!-- /bottom-grids-->
+    <section class="w3l-bottom-grids-6 py-5" id="bottom">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <h3 class="title-big text-center mb-5">Best Seller</h3>
+            <div class="grids-area-hny main-cont-wthree-fea row">
+                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
+                    <div class="area-box">
+                        <figure>
+                            <img src="img/giày 2.jpg" alt="product" class="img-fluid" />
+                            <h4><a href="#feature" class="title-head">Nike Court Air Zoom Vapor Pro</a></h4>
+                            <p class="">The shoe's form features extremely sturdy and meticulous stitching that
+                                satisfies
+                                all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
                             <p class="price"><strong>Price: $120</strong></p>
                             <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
+                                <button class="btn btn-primary btn-buy" data-price="120">Buy Now</button>
                                 <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal1">View</button>
+                                    data-target="#bestSellerModal1">View</button>
                             </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 2 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/puma bella.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Puma Bella</a>
-                            <p class="price"><strong>Price: $150</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal2">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 3 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/mlb.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">MLB Bigball Chunky Window Monogram</a>
-                            <p class="price"><strong>Price: $179,89</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal3">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 4 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nữ 1.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low Disrupt 2</a>
-                            <p class="price"><strong>Price: $66</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal4">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 5 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nữ 2.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Sneaker Nike Wmns Air Jordan 1 Mid </a>
-                            <p class="price"><strong>Price: $306</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal5">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 6 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nữ 3.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low</a>
-                            <p class="price"><strong>Price: $212</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal6">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 7 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nữ 4.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Wmns Air Jordan 1 Zoom Air Comfort High</a>
-                            <p class="price"><strong>Price: $265</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#moreImageModal7">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <!-- Ảnh 8 -->
-                <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                    <figure>
-                        <img src="img/nữ 5.jpg" alt="product" class="img-fluid">
-                        <div class="img-info">
-                            <a href="#url" class="img-title">Nike Wmns Blazer Low '77 Jumbo White Pink Oxford</a>
-                            <p class="price"><strong>Price: $188</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy">Buy</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"  
-                                    data-target="#moreImageModal8">View</button>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--//gallery2-->
-
-<!-- Modals cho từng ảnh trong Gallery 2 -->
-<div class="modal fade" id="moreImageModal1" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel1"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nike winflo.jpg" alt="Nike Dunk Low" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal2" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel2"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/puma bella.jpg" alt="Adidas Yeezy Boost 350" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal3" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel3"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 1.jpg" alt="Converse Chuck Taylor" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal4" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel4"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 2.jpg" alt="Vans Old Skool" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal5" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel5"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 3.jpg" alt="Asics Gel-Kayano" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal6" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel6"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 4.jpg" alt="Reebok Classic Leather" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal7" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel7"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 5.jpg" alt="Under Armour HOVR" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="moreImageModal8" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel8"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <img src="img/nữ 6.jpg" alt="Saucony Jazz Original" class="img-fluid">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<section class="w3l-servicesblock py-5" id="services">
-    <div class="container py-lg-5 py-md-4 py-2">
-        <div class="row">
-            <div class="col-lg-6 about-right-faq align-self">
-                <h3 class="title-big"> The number of customers buying shoes in 2024</h3>
-                <div class="progress-info info1">
-                    <h6 class="progress-tittle">NIKE <span class="">150.000</span></h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%"
-                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                        </div>
+                        </figure>
                     </div>
                 </div>
-                <div class="progress-info info2">
-                    <h6 class="progress-tittle">H&T <span class="">300.000</span>
-                    </h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%"
-                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
+                    <div class="area-box">
+                        <figure>
+                            <img src="img/jordan 11.jpg" alt="product" class="img-fluid" />
+                            <h4><a href="#feature" class="title-head">Jordan 11 Space Jam</a></h4>
+                            <p class="">The shoe's form features extremely sturdy and meticulous stitching that
+                                satisfies
+                                all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
+                            <p class="price"><strong>Price: $220</strong></p>
+                            <div class="button-group mt-3">
+                                <button class="btn btn-primary btn-buy" data-price="220">Buy now</button>
+                                <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                    data-target="#bestSellerModal2">View</button>
+                            </div>
+                        </figure>
                     </div>
                 </div>
-                <div class="progress-info info3">
-                    <h6 class="progress-tittle">Adidas <span class="">200.000</span></h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%"
-                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="progress-info info4 mb-0">
-                    <h6 class="progress-tittle">Chanel <span class="">100.000</span></h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%"
-                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
+                    <div class="area-box">
+                        <figure>
+                            <img src="img/giay 3.jpg" alt="product" class="img-fluid" />
+                            <h4><a href="#feature" class="title-head">Nike Air Force 1 '07 LV8</a></h4>
+                            <p class="">This shoe model retains the distinctive features of the Air Force 1 but with
+                                updated
+                                details, suitable for both sports and street fashion styles.</p>
+                            <p class="price"><strong>Price: $110</strong></p>
+                            <div class="button-group mt-3">
+                                <button class="btn btn-primary btn-buy" data-price="110">Buy now</button>
+                                <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                    data-target="#bestSellerModal3">View</button>
+                            </div>
+                        </figure>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 left-wthree-img mt-lg-0 mt-5">
-                <img src="img/progress.jpg" alt="" class="img-fluid radius-image">
-            </div>
         </div>
-    </div>
-</section>
-<!--  News section -->
-<div class="w3l-news" id="news">
-    <section id="grids5-block" class="py-5">
-      <div class="container py-lg-5 py-md-4 py-2">
-        <h3 class="title-big text-center">fashion articles</h3>
-        <div class="row mt-lg-5 mt-4">
-          <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4">
-            <div class="grids5-info">
-              <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 1.jpg" alt="" class="img-fluid news-image" /></a>
-              <div class="blog-info">
-                <h4><a href="#blog-single">trends in shoe choices among young people</a></h4>
-                <p class="date"><span class="fa fa-calendar mr-2"></span> September 17, 2024</p>
-                <p>Young people choose affordable fashion brands.</p>
-                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-            <div class="grids5-info">
-              <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 2.jpg" alt="" class="img-fluid news-image" /></a>
-              <div class="blog-info">
-                <h4><a href="#blog-single">emerging fashion brands recently</a></h4>
-                <p class="date"><span class="fa fa-calendar mr-2"></span> june 17, 2024</p>
-                <p>There are fashion brands that have recently emerged due to their prices being affordable.</p>
-                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
-            <div class="grids5-info">
-              <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 3.jpg" alt="" class="img-fluid news-image" /></a>
-              <div class="blog-info">
-                <h4><a href="#blog-single">Is Biti's footwear still relevant in today's fashion market?</a></h4>
-                <p class="date"><span class="fa fa-calendar mr-2"></span> march 23, 2024</p>
-                <p>Biti's shoes are no longer in line with fashion trends.</p>
-                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </div>
-  <!--  //News section -->
-<!-- home page about section -->
-<section class="w3l-testimonials" id="testimonials">
-    <div class="midd-w3 py-5">
-        <div class="container py-lg-5 py-md-3">
-            <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-4">
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>They have responded immediately whenever we have had a question or problem and have
-                                    been an amazing business partner. I Will recommend their services to
-                                    many of our clients and have been thrilled with the work that they have done.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Scarlett jack</h3>
-                                    <p class="identity">Web Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+    <!-- Modals cho Best Seller -->
+    <div class="modal fade" id="bestSellerModal1" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/giày 2.jpg" alt="Nike Court Air Zoom Vapor Pro" class="img-fluid">
                 </div>
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>The service was excellent! I was very impressed with their work. These guys are
-                                    incredibly talented, easy to work with, easy to get a hold of – true professionals.
-                                    My project has been completed in time and on the highest level.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Grayson lily</h3>
-                                    <p class="identity">Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>They have responded immediately whenever we have had a question or problem and have
-                                    been an amazing business partner. I Will recommend their services to
-                                    many of our clients and have been thrilled with the work that they have done.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Scarlett jack</h3>
-                                    <p class="identity">Web Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>The service was excellent! I was very impressed with their work. These guys are
-                                    incredibly talented, easy to work with, easy to get a hold of – true professionals.
-                                    My project has been completed in time and on the highest level.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Grayson lily</h3>
-                                    <p class="identity">Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>They have responded immediately whenever we have had a question or problem and have
-                                    been an amazing business partner. I Will recommend their services to
-                                    many of our clients and have been thrilled with the work that they have done.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Scarlett jack</h3>
-                                    <p class="identity">Web Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-content">
-                        <div class="testimonial">
-                            <blockquote>
-                                <q>The service was excellent! I was very impressed with their work. These guys are
-                                    incredibly talented, easy to work with, easy to get a hold of – true professionals.
-                                    My project has been completed in time and on the highest level.</q>
-                            </blockquote>
-                            <div class="testi-des">
-                                <div class="peopl align-self">
-                                    <h3>Grayson lily</h3>
-                                    <p class="identity">Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- //home page about section -->
-
-<div class="w3l-faq-block py-5" id="faq">
-    <div class="container py-lg-5">
-        <div class="row">
-            <div class="col-lg-6 pr-lg-5">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button id="accordion-button-1" aria-expanded="true"><span class="accordion-title">Is the H&T brand a trend among young people today?
-                        </span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>The H&T brand is being sought after by young people for its fashion innovation and product updates.</p>
-                        </div>
+    <div class="modal fade" id="bestSellerModal2" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/jordan 11.jpg" alt="Jordan 11 Space Jam" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bestSellerModal3" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/giay 3.jpg" alt="Nike Air Force 1 '07 LV8" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //bottom-grids-->
+    <script src="/du an 1/js/bootstrap.min.js"></script>
+    <script src="/du an 1/js/jquery-3.3.1.min.js"></script>
+    <!-- //bottom-grids-->
+    <!--//gallery1-->
+    <section class="w3l-portfolio-8 py-5">
+        <div class="portfolio-main py-lg-5 py-md-4 py-2">
+            <div class="container">
+                <div class="col-12 text-center mb-4">
+                    <h3 class="title-big">Male Products</h3>
+                </div>
+                <div class="row galler-top">
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike zoom fly.jpg" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Air Zoom Fly 3</a>
+                                <p class="price"><strong>Price: $100</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="100">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal1">View</button>
+                                </div>
+                            </div>
+                        </figure>
                     </div>
-                    <div class="accordion-item">
-                        <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Besides shoes, what other products can the brand H&T offer?</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>The H&T brand always meets customer needs regardless of any products related to fashion.</p>
-                        </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike pegasus.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Air Zoom Pegasus 40</a>
+                                <p class="price"><strong>Price: $157</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="157">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal2">View</button>
+                                </div>
+                            </div>
+                        </figure>
                     </div>
-                    <div class="accordion-item">
-                        <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will the H&T brand expand into other fields?</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>We are investing in other areas such as clothing and accessories, and soon there will be the H&T brand for clothing.</p>
-                        </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike zoom vapo.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike ZoomX Vaporfly Next%</a>
+                                <p class="price"><strong>Price: $148</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="148">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal3">View</button>
+                                </div>
+                            </div>
+                        </figure>
                     </div>
-                    <div class="accordion-item">
-                        <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Does the H&T brand still dominate the fashion market today?</span><span class="icon" aria-hidden="true"></span></button>
-                        <div class="accordion-content">
-                            <p>When the shoe fashion market is experiencing strong competition, the H&T brand still holds a significant advantage.</p>
-                        </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike air mã.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Air Max 95</a>
+                                <p class="price"><strong>Price: $190</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="190">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal4">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/new balance.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">New Balance 990v4</a>
+                                <p class="price"><strong>Price: $209,99</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="209.99">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal5">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/balencia.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Balenciaga Triple S</a>
+                                <p class="price"><strong>Price: $1100</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="1100">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal6">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike retro.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Air Jordan 4 Retro</a>
+                                <p class="price"><strong>Price: $215</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="215">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal7">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/puma  thunder.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Puma Thunder Spectra</a>
+                                <p class="price"><strong>Price: $120.00</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="120">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#imageModal8">View</button>
+                                </div>
+                            </div>
+                        </figure>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mt-lg-0 mt-sm-5 mt-4">
-                <img src="img/faq.jpg" alt="" class="img-fluid radius-image">
-            </div>
         </div>
-    </div>
-</div>
-
-<!-- home page newsletter -->
-<section class="w3l-bottom py-5" id="newsletter">
-    <div class="container py-md-5 py-md-4 text-center">
-      <div class="row">
-        <div class="col-lg-9 col-md-10 mx-auto">
-          <div class="subscribe mx-auto">
-            <div class="header-section text-center mx-auto">
-              <h3 class="title-big">Subscribe Newsletter </h3>
-              <p class="mt-2"> Enter your email & receive the latest news, updates & special offers from us.</p>
-            </div>
-            <form action="#" method="post" class="subscribe-wthree pt-2 mt-md-5 mt-3">
-              <div class="d-md-flex flex-wrap subscribe-wthree-field">
-                <input class="form-control" type="email" placeholder="Enter your email..." name="email" required="">
-                <button class="btn btn-style btn-primary" type="submit">Subscribe</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- //home page newsletter -->
-  <!-- footer -->
-  <section class="w3l-footer-29-main">
-    <div class="footer-29 py-5">
-      <div class="container py-lg-4">
-        <div class="row footer-top-29">
-          <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
-            <div class="footer-logo mb-4">
-              <a class="navbar-brand" href="index.html">
-                H&T</a>
-            </div>
-            <p>We have always been a major and professional fashion brand, and we are also partners with many large companies.</p>
-            <div class="main-social-footer-29 mt-4">
-              <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
-              <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
-              <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-              <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
-
-            <ul>
-              <h6 class="footer-title-29">Useful Links</h6>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="#blog"> Blog posts</a></li>
-              <li><a href="#pricing"> Pricing plans</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
-            <h6 class="footer-title-29">Resources</h6>
-            <ul>
-              <li><a href="#traning">Training</a></li>
-              <li><a href="#marketplace">Marketplace</a></li>
-              <li><a href="#experts">Our Experts</a></li>
-              <li><a href="#platform">Platform</a></li>
-              <li><a href="#customers"> Customers</a></li>
-            </ul>
-
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
-            <h6 class="footer-title-29">Instagram posts</h6>
-            <div class="post1">
-              <a href="#url" class="post-title">The products you should buy from the brand....</a>
-              <p>nike, adidas, balencia,new ballance,...</p>
-            </div>
-            <div class="post1 mt-4">
-              <a href="#url" class="post-title">top brand you should chose... </a>
-              <p>chanel, vans, gucci, nike,...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- copyright -->
-    <section class="w3l-copyright text-center">
-      <div class="container">
-        <p class="copy-footer-29">/a></p>
-      </div>
-
-      <!-- move top -->
-      <button onclick="topFunction()" id="movetop" title="Go to top">
-        &#10548;
-      </button>
-      <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-          scrollFunction()
-        };
-
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("movetop").style.display = "block";
-          } else {
-            document.getElementById("movetop").style.display = "none";
-          }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-      </script>
-      <!-- /move top -->
     </section>
-    <!-- //copyright -->
-  </section>
-  <!-- //footer -->
+    <!--//gallery1-->
 
-  <script src="js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+    <!-- Modals cho từng ảnh -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike zoom fly.jpg" alt="UI experience" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike pegasus.jpg" alt="Wordpress" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike zoom vapo.jpg" alt="Ecommerce" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike air mã.jpg" alt="Headphones" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal5" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel5"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/new balance.jpg" alt="Mobile app" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal6" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel6"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/balencia.jpg" alt="Modern Ideas" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal7" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel7"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike retro.jpg" alt="Creativity" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal8" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel8"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/puma  thunder.jpg" alt="Fashion design" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//gallery2-->
+    <section class="w3l-portfolio-8 py-5" id="moreservices">
+        <div class="portfolio-main py-lg-5 py-md-4 py-2">
+            <div class="container">
+                <div class="col-12 text-center mb-4">
+                    <h3 class="title-big">Female Products</h3>
+                </div>
+                <div class="row galler-top">
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nike winflo.jpg" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Winflo 11</a>
+                                <p class="price"><strong>Price: $120</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="120">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal1">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/puma bella.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Puma Bella</a>
+                                <p class="price"><strong>Price: $150</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="150">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal2">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/mlb.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">MLB Bigball Chunky Window Monogram</a>
+                                <p class="price"><strong>Price: $179,89</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="179.89">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal3">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nữ 1.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low Disrupt 2</a>
+                                <p class="price"><strong>Price: $66</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="66">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal4">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nữ 2.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Sneaker Nike Wmns Air Jordan 1 Mid</a>
+                                <p class="price"><strong>Price: $306</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="306">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal5">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nữ 3.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low</a>
+                                <p class="price"><strong>Price: $212</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="212">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal6">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nữ 4.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Wmns Air Jordan 1 Zoom Air Comfort High</a>
+                                <p class="price"><strong>Price: $265</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="265">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal7">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="img/nữ 5.jpg" alt="product" class="img-fluid">
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Wmns Blazer Low '77 Jumbo White Pink Oxford</a>
+                                <p class="price"><strong>Price: $188</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-price="188">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#moreImageModal8">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//gallery2-->
 
-  <script src="js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+    <!-- Modals cho từng ảnh trong Gallery 2 -->
+    <div class="modal fade" id="moreImageModal1" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nike winflo.jpg" alt="Nike Dunk Low" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal2" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/puma bella.jpg" alt="Adidas Yeezy Boost 350" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal3" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 1.jpg" alt="Converse Chuck Taylor" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal4" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel4"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 2.jpg" alt="Vans Old Skool" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal5" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel5"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 3.jpg" alt="Asics Gel-Kayano" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal6" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel6"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 4.jpg" alt="Reebok Classic Leather" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal7" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel7"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 5.jpg" alt="Under Armour HOVR" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="moreImageModal8" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel8"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="img/nữ 6.jpg" alt="Saucony Jazz Original" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="w3l-servicesblock py-5" id="services">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="row">
+                <div class="col-lg-6 about-right-faq align-self">
+                    <h3 class="title-big"> The number of customers buying shoes in 2024</h3>
+                    <div class="progress-info info1">
+                        <h6 class="progress-tittle">NIKE <span class="">150.000</span></h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%"
+                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-info info2">
+                        <h6 class="progress-tittle">H&T <span class="">300.000</span>
+                        </h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%"
+                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-info info3">
+                        <h6 class="progress-tittle">Adidas <span class="">200.000</span></h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%"
+                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-info info4 mb-0">
+                        <h6 class="progress-tittle">Chanel <span class="">100.000</span></h6>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%"
+                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 left-wthree-img mt-lg-0 mt-5">
+                    <img src="img/progress.jpg" alt="" class="img-fluid radius-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  News section -->
+    <div class="w3l-news" id="news">
+        <section id="grids5-block" class="py-5">
+            <div class="container py-lg-5 py-md-4 py-2">
+                <h3 class="title-big text-center">fashion articles</h3>
+                <div class="row mt-lg-5 mt-4">
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4">
+                        <div class="grids5-info">
+                            <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 1.jpg" alt=""
+                                    class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog-single">trends in shoe choices among young people</a></h4>
+                                <p class="date"><span class="fa fa-calendar mr-2"></span> September 17, 2024</p>
+                                <p>Young people choose affordable fashion brands.</p>
+                                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                            <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 2.jpg" alt=""
+                                    class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog-single">emerging fashion brands recently</a></h4>
+                                <p class="date"><span class="fa fa-calendar mr-2"></span> june 17, 2024</p>
+                                <p>There are fashion brands that have recently emerged due to their prices being
+                                    affordable.</p>
+                                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+                        <div class="grids5-info">
+                            <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 3.jpg" alt=""
+                                    class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                                <h4><a href="#blog-single">Is Biti's footwear still relevant in today's fashion
+                                        market?</a></h4>
+                                <p class="date"><span class="fa fa-calendar mr-2"></span> march 23, 2024</p>
+                                <p>Biti's shoes are no longer in line with fashion trends.</p>
+                                <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--  //News section -->
+    <!-- home page about section -->
+    <section class="w3l-testimonials" id="testimonials">
+        <div class="midd-w3 py-5">
+            <div class="container py-lg-5 py-md-3">
+                <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-4">
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>They have responded immediately whenever we have had a question or problem and
+                                        have
+                                        been an amazing business partner. I Will recommend their services to
+                                        many of our clients and have been thrilled with the work that they have
+                                        done.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Scarlett jack</h3>
+                                        <p class="identity">Web Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>The service was excellent! I was very impressed with their work. These guys are
+                                        incredibly talented, easy to work with, easy to get a hold of – true
+                                        professionals.
+                                        My project has been completed in time and on the highest level.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Grayson lily</h3>
+                                        <p class="identity">Digital Marketer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>They have responded immediately whenever we have had a question or problem and
+                                        have
+                                        been an amazing business partner. I Will recommend their services to
+                                        many of our clients and have been thrilled with the work that they have
+                                        done.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Scarlett jack</h3>
+                                        <p class="identity">Web Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>The service was excellent! I was very impressed with their work. These guys are
+                                        incredibly talented, easy to work with, easy to get a hold of – true
+                                        professionals.
+                                        My project has been completed in time and on the highest level.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Grayson lily</h3>
+                                        <p class="identity">Digital Marketer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>They have responded immediately whenever we have had a question or problem and
+                                        have
+                                        been an amazing business partner. I Will recommend their services to
+                                        many of our clients and have been thrilled with the work that they have
+                                        done.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Scarlett jack</h3>
+                                        <p class="identity">Web Developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <q>The service was excellent! I was very impressed with their work. These guys are
+                                        incredibly talented, easy to work with, easy to get a hold of – true
+                                        professionals.
+                                        My project has been completed in time and on the highest level.</q>
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="peopl align-self">
+                                        <h3>Grayson lily</h3>
+                                        <p class="identity">Digital Marketer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //home page about section -->
 
-<script src="js/circles.js"></script>
+    <div class="w3l-faq-block py-5" id="faq">
+        <div class="container py-lg-5">
+            <div class="row">
+                <div class="col-lg-6 pr-lg-5">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="true"><span class="accordion-title">Is the
+                                    H&T brand a trend among young people today?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>The H&T brand is being sought after by young people for its fashion innovation and
+                                    product updates.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Besides
+                                    shoes, what other products can the brand H&T offer?</span><span class="icon"
+                                    aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>The H&T brand always meets customer needs regardless of any products related to
+                                    fashion.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will the
+                                    H&T brand expand into other fields?</span><span class="icon"
+                                    aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>We are investing in other areas such as clothing and accessories, and soon there will
+                                    be the H&T brand for clothing.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Does the
+                                    H&T brand still dominate the fashion market today?</span><span class="icon"
+                                    aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>When the shoe fashion market is experiencing strong competition, the H&T brand still
+                                    holds a significant advantage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-sm-5 mt-4">
+                    <img src="img/faq.jpg" alt="" class="img-fluid radius-image">
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- owlcarousel -->
-<script src="js/owl.carousel.js"></script>
+    <!-- home page newsletter -->
+    <section class="w3l-bottom py-5" id="newsletter">
+        <div class="container py-md-5 py-md-4 text-center">
+            <div class="row">
+                <div class="col-lg-9 col-md-10 mx-auto">
+                    <div class="subscribe mx-auto">
+                        <div class="header-section text-center mx-auto">
+                            <h3 class="title-big">Subscribe Newsletter </h3>
+                            <p class="mt-2"> Enter your email & receive the latest news, updates & special offers from
+                                us.</p>
+                        </div>
+                        <form action="#" method="post" class="subscribe-wthree pt-2 mt-md-5 mt-3">
+                            <div class="d-md-flex flex-wrap subscribe-wthree-field">
+                                <input class="form-control" type="email" placeholder="Enter your email..." name="email"
+                                    required="">
+                                <button class="btn btn-style btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //home page newsletter -->
+    <!-- footer -->
+    <section class="w3l-footer-29-main">
+        <div class="footer-29 py-5">
+            <div class="container py-lg-4">
+                <div class="row footer-top-29">
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                        <div class="footer-logo mb-4">
+                            <a class="navbar-brand" href="index.html">
+                                H&T</a>
+                        </div>
+                        <p>We have always been a major and professional fashion brand, and we are also partners with
+                            many large companies.</p>
+                        <div class="main-social-footer-29 mt-4">
+                            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                            <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
 
-<!-- script for tesimonials carousel slider -->
-<script>
-  $(document).ready(function () {
-    $("#owl-demo1").owlCarousel({
-      loop: true,
-      nav: false,
-      margin: 50,
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false
-        },
-        992: {
-          items: 2,
-          nav: false
-        }
-      }
-    })
-  })
-</script>
-<!-- //script for tesimonials carousel slider -->
+                        <ul>
+                            <h6 class="footer-title-29">Useful Links</h6>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#blog"> Blog posts</a></li>
+                            <li><a href="#pricing"> Pricing plans</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
+                        <h6 class="footer-title-29">Resources</h6>
+                        <ul>
+                            <li><a href="#traning">Training</a></li>
+                            <li><a href="#marketplace">Marketplace</a></li>
+                            <li><a href="#experts">Our Experts</a></li>
+                            <li><a href="#platform">Platform</a></li>
+                            <li><a href="#customers"> Customers</a></li>
+                        </ul>
 
-  <!-- faq -->
-  <script>
-    const items = document.querySelectorAll(".accordion button");
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+                        <h6 class="footer-title-29">Instagram posts</h6>
+                        <div class="post1">
+                            <a href="#url" class="post-title">The products you should buy from the brand....</a>
+                            <p>nike, adidas, balencia,new ballance,...</p>
+                        </div>
+                        <div class="post1 mt-4">
+                            <a href="#url" class="post-title">top brand you should chose... </a>
+                            <p>chanel, vans, gucci, nike,...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <section class="w3l-copyright text-center">
+            <div class="container">
+                <p class="copy-footer-29">/a></p>
+            </div>
 
-    function toggleAccordion() {
-      const itemToggle = this.getAttribute('aria-expanded');
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                &#10548;
+            </button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
 
-      for (i = 0; i < items.length; i++) {
-        items[i].setAttribute('aria-expanded', 'false');
-      }
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
 
-      if (itemToggle == 'false') {
-        this.setAttribute('aria-expanded', 'true');
-      }
-    }
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+        </section>
+        <!-- //copyright -->
+    </section>
+    <!-- //footer -->
 
-    items.forEach(item => item.addEventListener('click', toggleAccordion));
-  </script>
-  <!-- //faq -->
+    <script src="du an 1/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+    <script src="du an 1/js/circles.js"></script>
+    <script src="du an 1/js/owl.carousel.js"></script>
+    <script src="du an 1/js/bootstrap.min.js"></script> <!-- Bootstrap CDN -->
 
-  <!--/MENU-JS-->
-  <script>
-    $(window).on("scroll", function () {
-      var scroll = $(window).scrollTop();
-
-      if (scroll >= 80) {
-        $("#site-header").addClass("nav-fixed");
-      } else {
-        $("#site-header").removeClass("nav-fixed");
-      }
-    });
-
-    //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("click", function () {
-      $("header").toggleClass("active");
-    });
-    $(document).on("ready", function () {
-      if ($(window).width() > 991) {
-        $("header").removeClass("active");
-      }
-      $(window).on("resize", function () {
-        if ($(window).width() > 991) {
-          $("header").removeClass("active");
-        }
-      });
-    });
-  </script>
-  <!--//MENU-JS-->
-
-  <!-- disable body scroll which navbar is in active -->
-  <script>
-    $(function () {
-      $('.navbar-toggler').click(function () {
-        $('body').toggleClass('noscroll');
-      })
-    });
-  </script>
-  <!-- //disable body scroll which navbar is in active -->
-
-  <!--bootstrap-->
-  <script src="/du an 1/js/bootstrap.min.js"></script>
-
-  </body>
-
-
-<script>
-    $(document).ready(function () {
-        // Biến lưu danh sách sản phẩm trong giỏ hàng
-        let cart = [];
-
-        // Hiển thị giỏ hàng khi nhấn biểu tượng giỏ hàng (tùy chọn)
-        $('.cart-icon a').on('click', function (e) {
-            e.preventDefault();
-            $('#cart-items').toggle();
-        });
-
-        // Xử lý nút "Mua" cho cả Best Seller và Products
-        $('.btn-buy').on('click', function () {
-            // Lấy thông tin sản phẩm từ phần tử cha
-            var productTitle = $(this).closest('.area-box, .img-info').find('.title-head, .img-title').text();
-
-            // Thêm sản phẩm vào mảng giỏ hàng nếu chưa có
-            if (!cart.includes(productTitle)) {
-                cart.push(productTitle);
-                updateCartDisplay();
+    <script>
+        const items = document.querySelectorAll(".accordion button");
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
+            for (i = 0; i < items.length; i++) {
+                items[i].setAttribute('aria-expanded', 'false');
             }
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
+        }
+        items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
 
-            // Hiển thị thông báo
-            alert('Đơn hàng "' + productTitle + '" đã được thêm vào giỏ hàng!');
-            $('#cart-items').show(); // Đảm bảo giỏ hàng hiển thị sau khi thêm
-        });
-
-        // Xử lý nút "Xem"
-        $('.btn-view').on('click', function () {
-            console.log('Đã nhấn nút Xem'); // Để kiểm tra
-        });
-
-        // Xử lý nút "Xóa đơn hàng"
-        $('#clear-cart').on('click', function () {
-            cart = []; // Xóa toàn bộ mảng giỏ hàng
-            updateCartDisplay(); // Cập nhật giao diện giỏ hàng
-            alert('Đơn hàng đã được xóa khỏi giỏ hàng!');
-        });
-
-        // Hàm cập nhật hiển thị giỏ hàng
-        function updateCartDisplay() {
-            var cartList = $('#cart-list');
-            cartList.empty(); // Xóa danh sách cũ
-            if (cart.length === 0) {
-                cartList.append('<li style="display: block; padding: 5px 0; border-bottom: 1px solid #eee;">Giỏ hàng trống</li>');
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
             } else {
-                cart.forEach(function (item) {
-                    cartList.append('<li style="display: block; padding: 5px 0; border-bottom: 1px solid #eee;">' + item + '</li>');
-                });
+                $("#site-header").removeClass("nav-fixed");
             }
-        }
+        });
 
-        // Khởi tạo hiển thị giỏ hàng ban đầu
-        updateCartDisplay();
-        // Ban đầu có thể ẩn giỏ hàng nếu muốn
-        // $('#cart-items').hide();
-    });
-</script>
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
 
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            });
+        });
+    </script>
 
+    <!-- Script cho giỏ hàng với số lượng, tổng giá, và xóa từng sản phẩm -->
+    <script>
+        $(document).ready(function () {
+            // Hàm load giỏ hàng từ LocalStorage
+            function loadCart() {
+                const cartList = $('#cart-list');
+                const cartTotal = $('#cart-total');
+                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartList.empty();
 
+                if (cartItems.length === 0) {
+                    cartList.append('<li>The cart is empty.</li>');
+                    cartTotal.text('Total amount: $0');
+                } else {
+                    let total = 0;
+                    cartItems.forEach((item, index) => {
+                        const itemTotal = item.price * item.quantity;
+                        total += itemTotal;
+                        const li = $(`
+              <li>
+                <span>${item.name} (x${item.quantity}) - $${itemTotal.toFixed(2)}</span>
+                <button class="btn btn-sm btn-danger remove-item" data-index="${index}">Delete</button>
+              </li>
+            `);
+                        cartList.append(li);
+                    });
+                    cartTotal.text(`Total amount: $${total.toFixed(2)}`);
+                }
+            }
 
-  </html>   
+            // Hàm lưu giỏ hàng vào LocalStorage
+            function saveCart(cartItems) {
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            }
+
+            // Hàm thêm sản phẩm vào giỏ hàng
+            function addToCart(name, price) {
+                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                const existingItem = cartItems.find(item => item.name === name);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cartItems.push({ name: name, price: price, quantity: 1 });
+                }
+
+                saveCart(cartItems);
+                loadCart();
+                alert(`Added "${name}" to the cart!`);
+            }
+
+            // Load giỏ hàng khi trang tải
+            loadCart();
+
+            // Toggle giỏ hàng khi nhấp vào biểu tượng
+            $('.cart-icon a').on('click', function (e) {
+                e.preventDefault();
+                $('#cart-items').toggleClass('active');
+            });
+
+            // Thêm sản phẩm khi nhấp vào nút Buy
+            $('.btn-buy').on('click', function () {
+                const productTitle = $(this).closest('.area-box, .img-info').find('.title-head, .img-title').text();
+                const price = parseFloat($(this).data('price'));
+                addToCart(productTitle, price);
+            });
+
+            // Xóa từng sản phẩm
+            $('#cart-list').on('click', '.remove-item', function () {
+                const index = $(this).data('index');
+                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItems.splice(index, 1);
+                saveCart(cartItems);
+                loadCart();
+            });
+
+            // Xóa toàn bộ giỏ hàng
+            $('#clear-cart').on('click', function () {
+                localStorage.removeItem('cartItems');
+                loadCart();
+                alert('The cart has been cleared!');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -7,13 +7,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Web service - Business Category Bootstrap Responsive Website Template - Contact : W3Layouts</title>
+  <title>du an</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="/du an 1/css/bai.css">
+  <link rel="stylesheet" href="du an 1/css/bai.css">
 </head>
 
 <body>
@@ -21,33 +21,34 @@
   <header id="site-header" class="fixed-top">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark stroke">
-        <h1><a class="navbar-brand" href="index.html">
-            Web service
-          </a></h1>
-        <!-- if logo is image enable this   
-<a class="navbar-brand" href="#index.html">
-    <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-</a> -->
+        <h1><a class="navbar-brand" href="index.html">H&T</a></h1>
         <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
           data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
           <span class="navbar-toggler-icon fa icon-close fa-times"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto mr-5">
-            <li class="nav-item @@home__active">
+          <ul class="navbar-nav ml-auto mr-5 align-items-center">
+            <li class="nav-item">
               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item @@about__active">
+            <li class="nav-item @@product">
+              <a class="nav-link" href="product.html">Products</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
-            <li class="nav-item @@services__active">
+            <li class="nav-item">
               <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item cart-container">
+              <div class="cart-icon">
+                <a href="#cart" class="nav-link"><span class="fa fa-shopping-cart"></span></a>
+              </div>
             </li>
             <nav class="ml-lg-3">
               <div class="search-bar">
@@ -58,23 +59,14 @@
                 </form>
               </div>
             </nav>
+            <div id="cart-items" class="cart-items">
+              <h6>The cart</h6>
+              <ul id="cart-list"></ul>
+              <div id="cart-total" class="mt-2">Total amount: $0</div>
+              <button id="clear-cart" class="btn btn-danger mt-3">Clear the entire cart.</button>
+            </div>
           </ul>
         </div>
-        <!-- toggle switch for light and dark theme -->
-        <div class="mobile-position">
-          <nav class="navigation">
-            <div class="theme-switch-wrapper">
-              <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox">
-                <div class="mode-container py-1">
-                  <i class="gg-sun"></i>
-                  <i class="gg-moon"></i>
-                </div>
-              </label>
-            </div>
-          </nav>
-        </div>
-        <!-- //toggle switch for light and dark theme -->
       </nav>
     </div>
   </header>
@@ -83,7 +75,7 @@
   <section class="w3l-about-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 pt-5 pb-4">
       <div class="container pt-lg-5 pt-md-3 py-lg-4 pb-md-3">
-        <h2 class="title">Get in touch</h2>
+        <h2 class="title">Contact</h2>
         <ul class="breadcrumbs-custom-path mt-2">
           <li><a href="index.html">Home</a></li>
           <li class="mx-2">/ </li>
@@ -115,13 +107,17 @@
             <div class="col-lg-4 cont-details">
               <address>
                 <h5 class="">Our Office Address</h5>
-                <p><span class="fa fa-map-marker"></span>Style web design studio, 208 Trainer Avenue street,
-                  Corner Market, NY - 62617 </p>
-                <p><span class="fa fa-phone"></span><a href="tel:+1(12) 366 411 4999"> +1(12) 366 411
-                    4999</a></p>
-                <p> <a href="mailto:mail@example.com"><span class="fa fa-envelope"></span>mail@example.com</a></p>
-                <p> <a href="mailto:support@example.com"><span class="fa fa-support"></span>support@example.com</a></p>
-
+                <p><span class="fa fa-map-marker"></span>11 Nguyễn Đình Chiểu, Đa Kao, Quận 1, Thành phố Hồ Chí Minh</p>
+                <p><span class="fa fa-phone"></span><a href="tel:+1(03)55849125">+1(03)55849125</a></p>
+  
+                <!-- Thêm khoảng cách bằng class mt-4 -->
+                <div class="mt-4">
+                  <h5 class="">Team Address</h5>
+                  <p><a href="mailto:vokhanhhuy709@gmail.com"><span
+                        class="fa fa-envelope"></span>vokhanhhuy709@gmail.com</a></p>
+                  <p><a href="mailto:support@example.com"><span class="fa fa-support"></span>support@example.com</a></p>
+                </div>
+  
                 <h5 class="mt-4 mb-3">Follow us on social media</h5>
                 <div class="main-social-footer-29">
                   <a href="#facebook" class="facebook"><span class="fa fa-facebook m-0"></span></a>
@@ -136,13 +132,12 @@
       </div>
       <div class="map mt-5">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2895687731!2d-74.26055986835598!3d40.697668402590374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1562582305883!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447071404137!2d106.69831587467805!3d10.787013589369848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3c6d8e8e5d%3A0x9e8e8e8e8e8e8e8e!2s11%20Nguy%E1%BB%85n%20%C4%90%C3%ACnh%20Ch%E1%BB%89u%2C%20%C4%90a%20Kao%2C%20Qu%E1%BA%ADn%201%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1698765432100!5m2!1svi!2s"
           frameborder="0" style="border:0" allowfullscreen=""></iframe>
       </div>
     </div>
   </section>
   <!-- //contacts -->
-
   <!-- footer -->
   <section class="w3l-footer-29-main">
     <div class="footer-29 py-5">
@@ -151,10 +146,10 @@
           <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
             <div class="footer-logo mb-4">
               <a class="navbar-brand" href="index.html">
-                Web service</a>
+                H&T</a>
             </div>
-            <p>We are real pros at digital and web design. We work for our clients to provide them with the best service
-              and products. We value every project as we get invaluable experience.</p>
+            <p>We have always been a major and professional fashion brand, and we are also partners with many large
+            companies.</p>
             <div class="main-social-footer-29 mt-4">
               <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
               <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
@@ -187,24 +182,19 @@
           <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
             <h6 class="footer-title-29">Instagram posts</h6>
             <div class="post1">
-              <a href="#url" class="post-title">Practice Safe Design. Always Use...</a>
-              <p>We work for our clients to provide them with the best service</p>
+              <a href="#url" class="post-title">The products you should buy from the brand....</a>
+              <p>nike, adidas, balencia,new ballance,...</p>
             </div>
             <div class="post1 mt-4">
-              <a href="#url" class="post-title">How to Start when You... </a>
-              <p>We work for our clients to provide them with the best service</p>
+              <a href="#url" class="post-title">top brand you should chose... </a>
+              <p>hanel, vans, gucci, nike,...</p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- copyright -->
-    <section class="w3l-copyright text-center">
-      <div class="container">
-        <p class="copy-footer-29">© 2020 Web Service. All rights reserved. Design by <a href="https://w3layouts.com/"
-            target="_blank">
-            W3layouts</a></p>
-      </div>
+    
 
       <!-- move top -->
       <button onclick="topFunction()" id="movetop" title="Go to top">
@@ -239,7 +229,6 @@
   <!-- JavaScript Libraries -->
   <script src="du an 1/js/jquery-3.3.1.min.js"></script> <!-- jQuery CDN -->
   <script src="du an 1/js/bootstrap.min.js"></script> <!-- Bootstrap CDN -->
-  <script src="du an 1/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
   <script src="du an 1/js/circles.js"></script>
   <script src="du an 1/js/owl.carousel.js"></script>
 
@@ -325,6 +314,87 @@
   </script>
   <!-- //Disable body scroll when navbar is active -->
 
+<!-- Script cho giỏ hàng -->
+<script>
+  $(document).ready(function () {
+    // Hàm load giỏ hàng từ LocalStorage
+    function loadCart() {
+      const cartList = $('#cart-list');
+      const cartTotal = $('#cart-total');
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartList.empty();
+      if (cartItems.length === 0) {
+        cartList.append('<li>The cart is empty.</li>');
+        cartTotal.text('Total amount: $0');
+      } else {
+        let total = 0;
+        cartItems.forEach((item, index) => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+          const li = $(`
+            <li>
+              <span>${item.name} (x${item.quantity}) - $${itemTotal.toFixed(2)}</span>
+              <button class="btn btn-sm btn-danger remove-item" data-index="${index}">Delete</button>
+            </li>
+          `);
+          cartList.append(li);
+        });
+        cartTotal.text(`Total amount: $${total.toFixed(2)}`);
+      }
+    }
+
+    // Hàm lưu giỏ hàng vào LocalStorage
+    function saveCart(cartItems) {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
+    // Hàm thêm sản phẩm vào giỏ hàng
+    function addToCart(name, price) {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingItem = cartItems.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cartItems.push({ name: name, price: price, quantity: 1 });
+      }
+      saveCart(cartItems);
+      loadCart();
+      alert(`Added "${name}" to the cart!`);
+    }
+
+    // Load giỏ hàng khi trang được tải
+    loadCart();
+
+    // Hiển thị/ẩn giỏ hàng khi nhấp vào biểu tượng
+    $('.cart-icon a').on('click', function (e) {
+      e.preventDefault();
+      $('#cart-items').toggleClass('active');
+    });
+
+    // Thêm sản phẩm khi nhấp vào nút Buy
+    $('.btn-buy').on('click', function () {
+      const productTitle = $(this).closest('.area-box, .img-info').find('.title-head, .img-title').text();
+      const price = parseFloat($(this).data('price')) || 100; // Mặc định $100 nếu không có giá
+      addToCart(productTitle, price);
+    });
+
+    // Xóa từng sản phẩm
+    $('#cart-list').on('click', '.remove-item', function () {
+      const index = $(this).data('index');
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems.splice(index, 1);
+      saveCart(cartItems);
+      loadCart();
+    });
+
+    // Xóa toàn bộ giỏ hàng
+    $('#clear-cart').on('click', function () {
+      localStorage.removeItem('cartItems');
+      loadCart();
+      alert('The cart has been cleared!');
+    });
+  });
+</script>
 </body>
 
 </html>

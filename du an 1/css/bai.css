@@ -1,14 +1,5 @@
 @charset "UTF-8";
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
---*/
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -679,6 +670,8 @@ mark,
 }
 
 
+
+
 .fly-to-cart {
   position: fixed;
   width: 40px;
@@ -724,7 +717,38 @@ mark,
 }
 
 
+/* Theme sáng (mặc định) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
 
+/* Theme tối */
+body.dark-theme {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+
+
+body.dark-theme .nav-link,
+body.dark-theme .navbar-brand {
+  color: #ffffff;
+}
+
+body.dark-theme .cart-items {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+
+
+body.dark-theme .w3l-banner,
+body.dark-theme .w3l-bottom-grids-6,
+body.dark-theme .w3l-portfolio-8 {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
 
 
 .nav-menu {
@@ -760,56 +784,105 @@ mark,
   margin-right: 10px;
 }
 
+/* Container cho giỏ hàng trong navbar */
+.cart-container {
+  position: relative;
+  height: 5px;
+  width: 5px;
+  justify-content: center;
+  display: inline-block;
+}
 
+/* Biểu tượng giỏ hàng */
+.cart-icon .nav-link {
+  padding: 0.5rem 1rem;
+  /* Đồng bộ với các nav-link khác */
+  color: #fff;
+  /* Màu trắng cho navbar-dark */
+}
 
+.cart-icon .nav-link:hover {
+  color: #ccc;
+  /* Hiệu ứng hover giống các nav-link */
+}
+
+/* Nội dung giỏ hàng */
 .cart-items {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.cart-items h6 {
-  margin-bottom: 10px;
-}
-
-.cart-items li {
-  padding: 5px 0;
-}
-
-
-.cart-items {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: absolute;
+  top: 400%;
+  /* Xuất hiện dưới biểu tượng */
+  right: 0;
+  /* Căn phải với biểu tượng */
   background: white;
   color: black;
   padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  min-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
   max-height: 300px;
   overflow-y: auto;
   z-index: 1000;
+  display: none;
+  /* Ẩn mặc định */
 }
 
+/* Heading trong giỏ hàng */
 .cart-items h6 {
   margin-bottom: 10px;
 }
 
+/* Danh sách sản phẩm trong giỏ hàng */
 #cart-list {
+  list-style: none;
   padding: 0;
   margin: 0;
-  list-style: none;
 }
 
 #cart-list li {
-  display: block;
-  /* Đảm bảo mỗi mục xuống hàng */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 5px 0;
-  /* Thêm khoảng cách giữa các dòng */
   border-bottom: 1px solid #eee;
-  /* Thêm đường kẻ nhẹ giữa các mục, tùy chọn */
+}
+
+/* Tổng giá */
+#cart-total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Nút xóa giỏ hàng */
+#clear-cart {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* Hiển thị giỏ hàng khi active */
+.cart-items.active {
+  display: block;
+}
+
+/* Thanh tìm kiếm */
+.search-bar {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.search__input {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search__icon {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
 }
 
 body {

@@ -1,83 +1,198 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>H&T - Services</title>
 
-  <title>du an</title>
-
+  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
- 
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="du an 1/css/bai.css">
+
+  <!-- React CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+
+  <!-- CSS giống index.html -->
+  <style>
+    .nav-link.active-services {
+      color: red !important;
+      /* Đổi thành màu đỏ khi ở trang Services */
+    }
+
+    /* Auth buttons styling */
+    .auth-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 180px;
+    }
+
+    .auth-buttons .btn-login,
+    .auth-buttons .btn-signup {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .auth-buttons .btn-login {
+      background-color: #ff4d4d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    .auth-buttons .btn-login:hover {
+      background-color: #e60000;
+    }
+
+    .auth-buttons .btn-signup {
+      background-color: #333;
+      color: white;
+    }
+
+    .auth-buttons .btn-signup:hover {
+      background-color: #555;
+    }
+
+    /* Dropdown styling for Profile */
+    .auth-buttons .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .auth-buttons .btn-profile {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: #ff4d4d;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .auth-buttons .btn-profile:hover {
+      background-color: #e60000;
+    }
+
+    .auth-buttons .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .auth-buttons .dropdown-content a,
+    .auth-buttons .dropdown-content button {
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .auth-buttons .dropdown-content a:hover,
+    .auth-buttons .dropdown-content button:hover {
+      background-color: #f1f1f1;
+      color: #ff4d4d;
+    }
+
+    .auth-buttons .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Cart items */
+    #cart-items {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    #cart-items.active {
+      display: block;
+    }
+
+    /* Buttons */
+    #cartButton {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: palevioletred;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+    }
+
+    #cartButton:hover {
+      background-color: red;
+    }
+
+    #movetop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: palevioletred;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+    }
+
+    #movetop:hover {
+      background-color: red;
+    }
+  </style>
 </head>
 
 <body>
   <!--header-->
   <header id="site-header" class="fixed-top">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark stroke">
-        <h1><a class="navbar-brand" href="index.html">H&T</a></h1>
-        <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
-          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto mr-5 align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item @@product">
-              <a class="nav-link" href="product.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item cart-container">
-              <div class="cart-icon">
-                <a href="#cart" class="nav-link"><span class="fa fa-shopping-cart"></span></a>
-              </div>
-            </li>
-            <nav class="ml-lg-3">
-              <div class="search-bar">
-                <form action="#" method="GET" class="search">
-                  <input type="search" class="search__input" name="search" placeholder="Search here.."
-                    onload="equalWidth()" required>
-                  <span class="fa fa-search search__icon"></span>
-                </form>
-              </div>
-            </nav>
-            <div id="cart-items" class="cart-items">
-              <h6>The cart</h6>
-              <ul id="cart-list"></ul>
-              <div id="cart-total" class="mt-2">Total amount: $0</div>
-              <button id="clear-cart" class="btn btn-danger mt-3">Clear the entire cart.</button>
-            </div>
-          </ul>
-        </div>
-      </nav>
+      <div id="react-root"></div>
     </div>
   </header>
-  <!--/header-->
-  <!-- services breadcrumb -->
+
+  <!-- breadcrumb -->
   <section class="w3l-about-breadcrumb">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 pt-5 pb-4">
       <div class="container pt-lg-5 pt-md-3 py-lg-4 pb-md-3">
-        <h2 class="title">Our Services</h2>
+        <h2 class="title">Services</h2>
         <ul class="breadcrumbs-custom-path mt-2">
           <li><a href="index.html">Home</a></li>
           <li class="mx-2">/ </li>
@@ -86,63 +201,59 @@
       </div>
     </div>
   </section>
-  <!-- //services breadcrumb -->
+
+  <!-- services section -->
   <section class="w3l-servicesblock w3l-servicesblock1 py-5" id="services">
     <div class="container py-lg-5 py-md-4 py-2">
-      <h3 class="title-big text-center mb-5"> what services H&T have ?</h3>
+      <h3 class="title-big text-center mb-5">What Services H&T Have?</h3>
       <div class="row">
         <div class="col-lg-6 align-self pr-lg-4">
           <div class="progress-info info1">
-            <h6 class="progress-tittle">Transporting Goods<span class="">>5000 orders</span></h6>
+            <h6 class="progress-tittle">Transporting Goods <span>>5000 orders</span></h6>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="90"
-                aria-valuemin="0" aria-valuemax="100">
-              </div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%" aria-valuenow="80"
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="progress-info info2">
-            <h6 class="progress-tittle">Shoe Cleaning <span class="">5 stars</span>
-            </h6>
+            <h6 class="progress-tittle">Shoe Cleaning <span>5 stars</span></h6>
             <div class="progress">
               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%" aria-valuenow="95"
-                aria-valuemin="0" aria-valuemax="100">
-              </div>
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="progress-info info3">
-            <h6 class="progress-tittle">Shoe Distribution <span class="">135 countries</span></h6>
+            <h6 class="progress-tittle">Shoe Distribution <span>135 countries</span></h6>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="95"
-                aria-valuemin="0" aria-valuemax="100">
-              </div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="90"
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="progress-info info4">
-            <h6 class="progress-tittle">Shoe Design <span class="">>100 customers</span></h6>
+            <h6 class="progress-tittle">Shoe Design <span>>100 customers</span></h6>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="95"
-                aria-valuemin="0" aria-valuemax="100">
-              </div>
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
           <div class="progress-info info2 mb-0">
-            <h6 class="progress-tittle">Shoe Appraisal <span class="">International Standard</span></h6>
+            <h6 class="progress-tittle">Shoe Appraisal <span>International Standard</span></h6>
             <div class="progress">
               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%" aria-valuenow="95"
-                aria-valuemin="0" aria-valuemax="100">
-              </div>
+                aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
         </div>
         <div class="col-lg-6 mt-lg-0 mt-5 pl-lg-4">
-          <h3 class="title-left"> We are confident in our top-notch team of employees.</h3>
-          <p class="mt-md-4 mt-3">When you come to the brand H&T, you will be well taken care of by experienced staff, and we will provide customers with the
-          best possible experience.</p>
+          <h3 class="title-left">We are confident in our top-notch team of employees.</h3>
+          <p class="mt-md-4 mt-3">When you come to the brand H&T, you will be well taken care of by experienced staff,
+            and we will provide customers with the best possible experience.</p>
         </div>
       </div>
     </div>
   </section>
-  <!--  services section -->
+
+  <!-- why choose H&T section -->
   <div class="w3l-servicesblock2" id="why">
     <section id="grids5-block" class="py-5">
       <div class="container py-lg-5 py-md-4 py-2">
@@ -154,7 +265,6 @@
                   class="img-fluid service-image" /></a>
               <div class="blog-info">
                 <h4><a href="#service">We believe in Quality</a></h4>
-                
               </div>
             </div>
           </div>
@@ -163,7 +273,7 @@
               <a href="#service" class="d-block zoom"><img src="img/anh giay stand.jpg" alt=""
                   class="img-fluid service-image" /></a>
               <div class="blog-info">
-                <h4><a href="#service">We stand with the customer's perspective.</a></h>
+                <h4><a href="#service">We stand with the customer's perspective.</a></h4>
               </div>
             </div>
           </div>
@@ -180,68 +290,134 @@
       </div>
     </section>
   </div>
-  <!--  //services section -->
+
+  <!-- important fields section -->
   <section class="w3l-servicesblock1 py-5" id="moreservices">
-  <div class="container py-lg-5 py-md-4 py-2">
-    <h3 class="title-big text-center">Important Fields</h3>
-    <div class="grids-area-hny main-cont-wthree-fea row mt-lg-5 mt-4 pb-lg-0 pb-2">
-      <div class="col-lg-4 col-md-6 grids-feature">
-        <div class="area-box">
-          <span class="fa fa-share-alt mt-0"></span> <!-- Biểu tượng mạng xã hội (mạng lưới kết nối) -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">Social Media</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+    <div class="container py-lg-5 py-md-4 py-2">
+      <h3 class="title-big text-center">Important Fields</h3>
+      <div class="grids-area-hny main-cont-wthree-fea row mt-lg-5 mt-4 pb-lg-0 pb-2">
+        <div class="col-lg-4 col-md-6 grids-feature">
+          <div class="area-box">
+            <span class="fa fa-share-alt mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">Social Media</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5">
-        <div class="area-box">
-          <span class="fa fa-registered mt-0"></span> <!-- Biểu tượng logo/thương hiệu -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">Branding Strategy</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+        <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5">
+          <div class="area-box">
+            <span class="fa fa-registered mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">Branding Strategy</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5">
-        <div class="area-box">
-          <span class="fa fa-paint-brush mt-0"></span> <!-- Biểu tượng cọ vẽ (thiết kế) -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">Design</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+        <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5">
+          <div class="area-box">
+            <span class="fa fa-paint-brush mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">Design</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-        <div class="area-box">
-          <span class="fa fa-lightbulb-o mt-0"></span> <!-- Biểu tượng bóng đèn (chiến lược/ý tưởng) -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">Product Strategy</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+        <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
+          <div class="area-box">
+            <span class="fa fa-lightbulb-o mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">Product Strategy</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-        <div class="area-box">
-          <span class="fa fa-shopping-cart mt-0"></span> <!-- Biểu tượng giỏ hàng (bán hàng trực tuyến) -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">Selling Online Service</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+        <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
+          <div class="area-box">
+            <span class="fa fa-shopping-cart mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">Selling Online Service</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-        <div class="area-box">
-          <span class="fa fa-search mt-0"></span> <!-- Biểu tượng kính lúp (SEO) -->
-          <div class="area-box-info">
-            <h4><a href="#feature" class="title-head">SEO Services</a></h4>
-            <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+        <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
+          <div class="area-box">
+            <span class="fa fa-search mt-0"></span>
+            <div class="area-box-info">
+              <h4><a href="#feature" class="title-head">SEO Services</a></h4>
+              <p class="mt-sm-3 mt-2">A ligula quam et libero justo, in. Ut eu leo non. Duis sed et dolor sit amet.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- testimonials section (từ index.html) -->
+  <section class="w3l-testimonials" id="testimonials">
+    <div class="midd-w3 py-5">
+      <div class="container py-lg-5 py-md-3">
+        <div id="owl-demo1" class="owl-carousel owl-theme mt-4 py-2 mb-4">
+          <div class="item">
+            <div class="testimonial-content">
+              <div class="testimonial">
+                <blockquote>
+                  <q>They have responded immediately whenever we have had a question or problem and have been an amazing
+                    business partner.</q>
+                </blockquote>
+                <div class="testi-des">
+                  <div class="peopl align-self">
+                    <h3>Scarlett Jack</h3>
+                    <p class="identity">Web Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="testimonial-content">
+              <div class="testimonial">
+                <blockquote>
+                  <q>The service was excellent! These guys are incredibly talented, easy to work with, and true
+                    professionals.</q>
+                </blockquote>
+                <div class="testi-des">
+                  <div class="peopl align-self">
+                    <h3>Grayson Lily</h3>
+                    <p class="identity">Digital Marketer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- newsletter section (từ index.html) -->
+  <section class="w3l-bottom py-5" id="newsletter">
+    <div class="container py-md-5 py-md-4 text-center">
+      <div class="row">
+        <div class="col-lg-9 col-md-10 mx-auto">
+          <div class="subscribe mx-auto">
+            <div class="header-section text-center mx-auto">
+              <h3 class="title-big">Subscribe Newsletter</h3>
+              <p class="mt-2">Enter your email & receive the latest news, updates & special offers from us.</p>
+            </div>
+            <form action="#" method="post" class="subscribe-wthree pt-2 mt-md-5 mt-3">
+              <div class="d-md-flex flex-wrap subscribe-wthree-field">
+                <input class="form-control" type="email" placeholder="Enter your email..." name="email" required="">
+                <button class="btn btn-style btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- footer -->
   <section class="w3l-footer-29-main">
     <div class="footer-29 py-5">
@@ -249,10 +425,10 @@
         <div class="row footer-top-29">
           <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
             <div class="footer-logo mb-4">
-              <a class="navbar-brand" href="index.html">
-                H&T</a>
+              <a class="navbar-brand" href="index.html">H&T</a>
             </div>
-            <p>We have always been a major and professional fashion brand, and we are also partners with many large companies.</p>
+            <p>We have always been a major and professional fashion brand, and we are also partners with many large
+              companies.</p>
             <div class="main-social-footer-29 mt-4">
               <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
               <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
@@ -261,12 +437,11 @@
             </div>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
-
             <ul>
               <h6 class="footer-title-29">Useful Links</h6>
               <li><a href="about.html">About Us</a></li>
-              <li><a href="#blog"> Blog posts</a></li>
-              <li><a href="#pricing">  plans</a></li>
+              <li><a href="#blog">Blog posts</a></li>
+              <li><a href="#pricing">Pricing plans</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -278,113 +453,185 @@
               <li><a href="#marketplace">Marketplace</a></li>
               <li><a href="#experts">Our Experts</a></li>
               <li><a href="#platform">Platform</a></li>
-              <li><a href="#customers"> Customers</a></li>
+              <li><a href="#customers">Customers</a></li>
             </ul>
-
           </div>
           <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
             <h6 class="footer-title-29">Instagram posts</h6>
             <div class="post1">
-              <a href="#url" class="post-title">The products you should buy from the brand.....</a>
-              <p>ike, adidas, balencia,new ballance,...</p>
+              <a href="#url" class="post-title">The products you should buy from the brand...</a>
+              <p>nike, adidas, balenciaga, new balance,...</p>
             </div>
             <div class="post1 mt-4">
-              <a href="#url" class="post-title">top brand you should chose... </a>
+              <a href="#url" class="post-title">Top brands you should choose...</a>
               <p>chanel, vans, gucci, nike,...</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- copyright -->
     <section class="w3l-copyright text-center">
       <div class="container">
+        <p class="copy-footer-29">© 2025 H&T. All rights reserved.</p>
       </div>
-
-      <!-- move top -->
-      <button onclick="topFunction()" id="movetop" title="Go to top">
-        ⤴
-      </button>
-      <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-          scrollFunction()
-        };
-
-        function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("movetop").style.display = "block";
-          } else {
-            document.getElementById("movetop").style.display = "none";
-          }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-      </script>
-      <!-- /move top -->
+      <button id="cartButton" title="Go to cart"><i class="fa fa-shopping-cart"></i></button>
+      <button onclick="topFunction()" id="movetop" title="Go to top">⤴</button>
     </section>
-    <!-- //copyright -->
   </section>
-  <!-- //footer -->
 
-  <!-- JavaScript Libraries -->
-  <script src="du an 1/js/jquery-3.3.1.min.js"></script> <!-- jQuery CDN -->
-  <script src="du an 1/js/bootstrap.min.js"></script> <!-- Bootstrap CDN -->
+  <!-- Scripts -->
+  <script src="du an 1/js/jquery-3.3.1.min.js"></script>
+  <script src="du an 1/js/bootstrap.min.js"></script>
   <script src="du an 1/js/circles.js"></script>
   <script src="du an 1/js/owl.carousel.js"></script>
 
-  <!-- Script for testimonials carousel slider -->
-  <script>
-    $(document).ready(function () {
-      $("#owl-demo1").owlCarousel({
-        loop: true,
-        nav: false,
-        margin: 50,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1,
-            nav: false
-          },
-          992: {
-            items: 2,
-            nav: false
-          }
-        }
-      })
-    })
+  <!-- React Navbar -->
+  <script type="text/babel">
+    const Navbar = () => {
+      const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('isLoggedIn') === 'true');
+      const [isCartOpen, setIsCartOpen] = React.useState(false);
+      const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('cartItems')) || []);
+
+      const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+
+      const toggleCart = () => {
+        setIsCartOpen(!isCartOpen);
+      };
+
+      const clearCart = () => {
+        setCart([]);
+        localStorage.setItem('cartItems', JSON.stringify([]));
+        alert('Đã xóa toàn bộ giỏ hàng!');
+      };
+
+      const removeItem = (index) => {
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        setCart(newCart);
+        localStorage.setItem('cartItems', JSON.stringify(newCart));
+      };
+
+      const handleLogin = () => {
+        window.location.href = "demologin.html";
+      };
+
+      const handleSignup = () => {
+        window.location.href = "demosignup.html";
+      };
+
+      const handleLogout = () => {
+        localStorage.setItem('isLoggedIn', 'false');
+        setIsLoggedIn(false);
+        alert('Logged out successfully!');
+      };
+
+      return (
+        <nav className="navbar navbar-expand-lg navbar-dark stroke">
+          <h1><a className="navbar-brand" href="index.html">H&T</a></h1>
+          <button
+            className="navbar-toggler collapsed bg-gradient"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon fa icon-expand fa-bars"></span>
+            <span className="navbar-toggler-icon fa icon-close fa-times"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ml-auto mr-5 align-items-center">
+              <li className="nav-item">
+                <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  Products
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="product.html">Product</a>
+                  <a className="dropdown-item" href="running-products.html">Running</a>
+                  <a className="dropdown-item" href="basketball-products.html">Basketball</a>
+                  <a className="dropdown-item" href="football-products.html">Football</a>
+                  <a className="dropdown-item" href="gym-products.html">Gym</a>
+                </div>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="about.html">About</a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link active-services" href="services.html">Services <span className="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li className="nav-item cart-container">
+                <div className="cart-icon">
+                  <a href="#cart" className="nav-link" onClick={(e) => { e.preventDefault(); toggleCart(); }}>
+                    <span className="fa fa-shopping-cart"></span>
+                  </a>
+                </div>
+              </li>
+              <nav className="ml-lg-3">
+                <div className="search-bar">
+                  <form action="#" method="GET" className="search">
+                    <input type="search" className="search__input" name="search" placeholder="Search here.." required />
+                    <span className="fa fa-search search__icon"></span>
+                  </form>
+                </div>
+              </nav>
+              <li className="nav-item user-container">
+                <div className="auth-buttons">
+                  {isLoggedIn ? (
+                    <div className="dropdown">
+                      <button className="btn btn-profile">
+                        <span className="fas fa-user"></span> Profile
+                      </button>
+                      <div className="dropdown-content">
+                        <a href="profile.html">View Profile</a>
+                        <button onClick={handleLogout}>Logout</button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <button className="btn btn-login" onClick={handleLogin}>Login</button>
+                      <button className="btn btn-signup" onClick={handleSignup}>Signup</button>
+                    </div>
+                  )}
+                </div>
+              </li>
+              <div id="cart-items" className={`cart-items ${isCartOpen ? 'active' : ''}`}>
+                <h6>The cart</h6>
+                <ul id="cart-list">
+                  {cart.length === 0 ? (
+                    <li>Giỏ hàng trống</li>
+                  ) : (
+                    cart.map((item, index) => (
+                      <li key={index}>
+                        <span>{item.name} (x{item.quantity}) - ${(item.price * item.quantity).toFixed(2)}</span>
+                        <button className="btn btn-sm btn-danger remove-item" onClick={() => removeItem(index)}>Xóa</button>
+                      </li>
+                    ))
+                  )}
+                </ul>
+                <div id="cart-total" className="mt-2">Tổng tiền: ${cartTotal}</div>
+                <button id="clear-cart" className="btn btn-danger mt-3" onClick={clearCart}>Clear the entire cart</button>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      );
+    };
+
+    ReactDOM.render(<Navbar />, document.getElementById('react-root'));
   </script>
-  <!-- //Script for testimonials carousel slider -->
 
-  <!-- FAQ script -->
-  <script>
-    const items = document.querySelectorAll(".accordion button");
-
-    function toggleAccordion() {
-      const itemToggle = this.getAttribute('aria-expanded');
-
-      for (i = 0; i < items.length; i++) {
-        items[i].setAttribute('aria-expanded', 'false');
-      }
-
-      if (itemToggle == 'false') {
-        this.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    items.forEach(item => item.addEventListener('click', toggleAccordion));
-  </script>
-  <!-- //FAQ script -->
-
-  <!-- MENU-JS -->
+  <!-- Additional Scripts -->
   <script>
     $(window).on("scroll", function () {
       var scroll = $(window).scrollTop();
-
       if (scroll >= 80) {
         $("#site-header").addClass("nav-fixed");
       } else {
@@ -392,115 +639,30 @@
       }
     });
 
-    // Main navigation Active Class Add Remove
     $(".navbar-toggler").on("click", function () {
       $("header").toggleClass("active");
     });
-    $(document).on("ready", function () {
-      if ($(window).width() > 991) {
-        $("header").removeClass("active");
-      }
-      $(window).on("resize", function () {
-        if ($(window).width() > 991) {
-          $("header").removeClass("active");
-        }
-      });
-    });
-  </script>
-  <!-- //MENU-JS -->
 
-  <!-- Disable body scroll when navbar is active -->
-  <script>
-    $(function () {
-      $('.navbar-toggler').click(function () {
-        $('body').toggleClass('noscroll');
-      })
-    });
-  </script>
-  <!-- //Disable body scroll when navbar is active -->
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-<!-- Script cho giỏ hàng -->
-<script>
-  $(document).ready(function () {
-    // Hàm load giỏ hàng từ LocalStorage
-    function loadCart() {
-      const cartList = $('#cart-list');
-      const cartTotal = $('#cart-total');
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartList.empty();
-      if (cartItems.length === 0) {
-        cartList.append('<li>The cart is empty.</li>');
-        cartTotal.text('Total amount: $0');
+    window.onscroll = function () {
+      let topButton = document.getElementById("movetop");
+      let cartButton = document.getElementById("cartButton");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topButton.style.display = "block";
+        cartButton.style.display = "block";
       } else {
-        let total = 0;
-        cartItems.forEach((item, index) => {
-          const itemTotal = item.price * item.quantity;
-          total += itemTotal;
-          const li = $(`
-            <li>
-              <span>${item.name} (x${item.quantity}) - $${itemTotal.toFixed(2)}</span>
-              <button class="btn btn-sm btn-danger remove-item" data-index="${index}">Delete</button>
-            </li>
-          `);
-          cartList.append(li);
-        });
-        cartTotal.text(`Total amount: $${total.toFixed(2)}`);
+        topButton.style.display = "none";
+        cartButton.style.display = "none";
       }
-    }
+    };
 
-    // Hàm lưu giỏ hàng vào LocalStorage
-    function saveCart(cartItems) {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
-
-    // Hàm thêm sản phẩm vào giỏ hàng
-    function addToCart(name, price) {
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const existingItem = cartItems.find(item => item.name === name);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cartItems.push({ name: name, price: price, quantity: 1 });
-      }
-      saveCart(cartItems);
-      loadCart();
-      alert(`Added "${name}" to the cart!`);
-    }
-
-    // Load giỏ hàng khi trang được tải
-    loadCart();
-
-    // Hiển thị/ẩn giỏ hàng khi nhấp vào biểu tượng
-    $('.cart-icon a').on('click', function (e) {
-      e.preventDefault();
-      $('#cart-items').toggleClass('active');
-    });
-
-    // Thêm sản phẩm khi nhấp vào nút Buy
-    $('.btn-buy').on('click', function () {
-      const productTitle = $(this).closest('.area-box, .img-info').find('.title-head, .img-title').text();
-      const price = parseFloat($(this).data('price')) || 100; // Mặc định $100 nếu không có giá
-      addToCart(productTitle, price);
-    });
-
-    // Xóa từng sản phẩm
-    $('#cart-list').on('click', '.remove-item', function () {
-      const index = $(this).data('index');
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartItems.splice(index, 1);
-      saveCart(cartItems);
-      loadCart();
-    });
-
-    // Xóa toàn bộ giỏ hàng
-    $('#clear-cart').on('click', function () {
-      localStorage.removeItem('cartItems');
-      loadCart();
-      alert('The cart has been cleared!');
-    });
-  });
-</script>
-
+    document.getElementById("cartButton").onclick = function () {
+      window.location.href = "/shoppingcart/shoppingcart.html";
+    };
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Running Products - H&T</title>
+
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- React Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="du an 1/css/bai.css">
+
+    <!-- CSS for Login/Signup, Interface, and Cart -->
+    <style>
+        .nav-link.active-products {
+            color: red !important;
+        }
+
+        .auth-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            min-width: 180px;
+        }
+
+        .auth-buttons .btn-login,
+        .auth-buttons .btn-signup {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .auth-buttons .btn-login {
+            background-color: #ff4d4d;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .auth-buttons .btn-login:hover {
+            background-color: #e60000;
+        }
+
+        .auth-buttons .btn-signup {
+            background-color: #333;
+            color: white;
+        }
+
+        .auth-buttons .btn-signup:hover {
+            background-color: #555;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-container.active {
+                max-height: 300px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-menu li {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .auth-buttons {
+                flex-direction: row;
+                padding: 0 10px;
+                justify-content: center;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kumbh Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .auth-buttons .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .auth-buttons .btn-profile {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #ff4d4d;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons .btn-profile:hover {
+            background-color: #e60000;
+        }
+
+        .auth-buttons .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .auth-buttons .dropdown-content a,
+        .auth-buttons .dropdown-content button {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .auth-buttons .dropdown-content a:hover,
+        .auth-buttons .dropdown-content button:hover {
+            background-color: #f1f1f1;
+            color: #ff4d4d;
+        }
+
+        .auth-buttons .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #cartButton {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: palevioletred;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        #cartButton:hover {
+            background-color: red;
+        }
+
+        #movetop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: palevioletred;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        #movetop:hover {
+            background-color: red;
+        }
+
+        .cart-items {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 250px;
+            z-index: 1000;
+        }
+
+        .cart-items.active {
+            display: block;
+        }
+
+        .cart-items ul {
+            list-style: none;
+            padding: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .cart-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        .cart-items .btn-danger {
+            background-color: #ff4d4d;
+            border: none;
+        }
+
+        .cart-items .btn-danger:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <div id="react-root"></div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="home" class="w3l-banner py-5">
+        <div class="container py-lg-5 mt-lg-5">
+            <div class="py-lg-4 my-2">
+                <div class="banner-info-grid mt-lg-5">
+                    <h3 class="mb-4">Running Products</h3>
+                    <p>Discover the best footwear for Running enthusiasts.</p>
+                    <section id="bottom" class="demo">
+                        <a href="#bottom"><span></span>Scroll</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Running Products -->
+    <section class="w3l-portfolio-8 py-5">
+        <div class="portfolio-main py-lg-5 py-md-4 py-2">
+            <div class="container">
+                <div class="row galler-top mb-5" id="running-products">
+                    <div class="col-12 text-center mb-4">
+                        <h3 class="title-big">Running Products</h3>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+PEGASUS+PREMIUM.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus Premium</a>
+                                <p class="price"><strong>Price: $241</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus Premium"
+                                        data-price="241"
+                                        onclick="window.addToCart('Nike Pegasus Premium', '241')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal1">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+PEGASUS+PLUS.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus Plus</a>
+                                <p class="price"><strong>Price: $206</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus Plus"
+                                        data-price="206"
+                                        onclick="window.addToCart('Nike Pegasus Plus', '206')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal2">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+AIR+ZOOM+PEGASUS+41+PRM.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus 41 PRM</a>
+                                <p class="price"><strong>Price: $160</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus 41 PRM"
+                                        data-price="160"
+                                        onclick="window.addToCart('Nike Pegasus 41 PRM', '160')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal3">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/AIR+ZOOM+PEGASUS+41.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus 41</a>
+                                <p class="price"><strong>Price: $150</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus 41" data-price="150"
+                                        onclick="window.addToCart('Nike Pegasus 41', '150')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal4">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+NIKE+REACTX+PEGASUS+TRAIL+5.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus Trail 5</a>
+                                <p class="price"><strong>Price: $160</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus Trail 5"
+                                        data-price="160"
+                                        onclick="window.addToCart('Nike Pegasus Trail 5', '160')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal5">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+PEGASUS+EASYON.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus EasyOn</a>
+                                <p class="price"><strong>Price: $150</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus EasyOn"
+                                        data-price="150"
+                                        onclick="window.addToCart('Nike Pegasus EasyOn', '150')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal6">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/AIR+ZM+PEGASUS+41+GTX.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Pegasus GORE-TEX</a>
+                                <p class="price"><strong>Price: $183</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Pegasus GORE-TEX"
+                                        data-price="183"
+                                        onclick="window.addToCart('Nike Pegasus GORE-TEX', '183')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal7">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+NIKE+JOURNEY+RUN.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Journey Run</a>
+                                <p class="price"><strong>Price: $103</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Journey Run"
+                                        data-price="103"
+                                        onclick="window.addToCart('Nike Journey Run', '103')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal8">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/FLEX+RUNNER+3+(PS).png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Flex Runner 3</a>
+                                <p class="price"><strong>Price: $45</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Flex Runner 3"
+                                        data-price="45"
+                                        onclick="window.addToCart('Nike Flex Runner 3', '45')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal9">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/W+NIKE+DOWNSHIFTER+13.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Downshifter 13</a>
+                                <p class="price"><strong>Price: $80</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Downshifter 13"
+                                        data-price="80"
+                                        onclick="window.addToCart('Nike Downshifter 13', '80')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal10">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+JUNIPER+TRAIL+3.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Juniper Trail 3</a>
+                                <p class="price"><strong>Price: $299</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Juniper Trail 3"
+                                        data-price="299"
+                                        onclick="window.addToCart('Nike Juniper Trail 3', '299')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal11">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+QUEST+6.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Quest 6</a>
+                                <p class="price"><strong>Price: $195</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Quest 6" data-price="195"
+                                        onclick="window.addToCart('Nike Quest 6', '195')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal12">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+RUN+DEFY.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Run Defy</a>
+                                <p class="price"><strong>Price: $195</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Run Defy" data-price="195"
+                                        onclick="window.addToCart('Nike Run Defy', '195')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal13">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+AIR+MAX+VERSE.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Air Max Verse</a>
+                                <p class="price"><strong>Price: $206</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Air Max Verse"
+                                        data-price="206"
+                                        onclick="window.addToCart('Nike Air Max Verse', '206')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal14">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/WMNS+ZOOMX+INVINCIBLE+RUN+FK+3.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Invincible 3</a>
+                                <p class="price"><strong>Price: $315</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Invincible 3"
+                                        data-price="315"
+                                        onclick="window.addToCart('Nike Invincible 3', '315')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal15">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+ZOOMX+STREAKFLY.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Streakfly</a>
+                                <p class="price"><strong>Price: $327</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Streakfly" data-price="327"
+                                        onclick="window.addToCart('Nike Streakfly', '327')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal16">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/ZOOMX+STREAKFLY+2.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Streakfly 2</a>
+                                <p class="price"><strong>Price: $206</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Streakfly 2"
+                                        data-price="206"
+                                        onclick="window.addToCart('Nike Streakfly 2', '206')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal17">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+REVOLUTION+7+WIDE.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Revolution 7</a>
+                                <p class="price"><strong>Price: $70</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Revolution 7"
+                                        data-price="70"
+                                        onclick="window.addToCart('Nike Revolution 7', '70')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal18">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/NIKE+RUN+SWIFT+3.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Run Swift 3</a>
+                                <p class="price"><strong>Price: $85</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Run Swift 3" data-price="85"
+                                        onclick="window.addToCart('Nike Run Swift 3', '85')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal19">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
+                        <figure>
+                            <img src="running-img/WMNS+NIKE+AIR+WINFLO+11.png" alt="product" class="img-fluid" />
+                            <div class="img-info">
+                                <a href="#url" class="img-title">Nike Winflo 11</a>
+                                <p class="price"><strong>Price: $115</strong></p>
+                                <div class="button-group mt-3">
+                                    <button class="btn btn-primary btn-buy" data-name="Nike Winflo 11" data-price="115"
+                                        onclick="window.addToCart('Nike Winflo 11', '115')">Buy</button>
+                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
+                                        data-target="#productModal20">View</button>
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal fade" id="productModal1" tabindex="-1" role="dialog" aria-labelledby="productModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+PEGASUS+PREMIUM.png" alt="Nike Pegasus Premium" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal2" tabindex="-1" role="dialog" aria-labelledby="productModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+PEGASUS+PLUS.png" alt="Nike Pegasus Plus" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal3" tabindex="-1" role="dialog" aria-labelledby="productModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+AIR+ZOOM+PEGASUS+41+PRM.png" alt="Nike Pegasus 41 PRM" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal4" tabindex="-1" role="dialog" aria-labelledby="productModalLabel4"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/AIR+ZOOM+PEGASUS+41.png" alt="Nike Pegasus 41" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal5" tabindex="-1" role="dialog" aria-labelledby="productModalLabel5"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+NIKE+REACTX+PEGASUS+TRAIL+5.png" alt="Nike Pegasus Trail 5"
+                        class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal6" tabindex="-1" role="dialog" aria-labelledby="productModalLabel6"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+PEGASUS+EASYON.png" alt="Nike Pegasus EasyOn" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal7" tabindex="-1" role="dialog" aria-labelledby="productModalLabel7"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/AIR+ZM+PEGASUS+41+GTX.png" alt="Nike Pegasus GORE-TEX" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal8" tabindex="-1" role="dialog" aria-labelledby="productModalLabel8"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+NIKE+JOURNEY+RUN.png" alt="Nike Journey Run" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal9" tabindex="-1" role="dialog" aria-labelledby="productModalLabel9"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/FLEX+RUNNER+3+(PS).png" alt="Nike Flex Runner 3" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal10" tabindex="-1" role="dialog" aria-labelledby="productModalLabel10"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/W+NIKE+DOWNSHIFTER+13.png" alt="Nike Downshifter 13" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal11" tabindex="-1" role="dialog" aria-labelledby="productModalLabel11"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+JUNIPER+TRAIL+3.png" alt="Nike Juniper Trail 3" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal12" tabindex="-1" role="dialog" aria-labelledby="productModalLabel12"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+QUEST+6.png" alt="Nike Quest 6" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal13" tabindex="-1" role="dialog" aria-labelledby="productModalLabel13"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+RUN+DEFY.png" alt="Nike Run Defy" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal14" tabindex="-1" role="dialog" aria-labelledby="productModalLabel14"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+AIR+MAX+VERSE.png" alt="Nike Air Max Verse" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal15" tabindex="-1" role="dialog" aria-labelledby="productModalLabel15"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/WMNS+ZOOMX+INVINCIBLE+RUN+FK+3.png" alt="Nike Invincible 3" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal16" tabindex="-1" role="dialog" aria-labelledby="productModalLabel16"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+ZOOMX+STREAKFLY.png" alt="Nike Streakfly" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal17" tabindex="-1" role="dialog" aria-labelledby="productModalLabel17"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/ZOOMX+STREAKFLY+2.png" alt="Nike Streakfly 2" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal18" tabindex="-1" role="dialog" aria-labelledby="productModalLabel18"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+REVOLUTION+7+WIDE.png" alt="Nike Revolution 7" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal19" tabindex="-1" role="dialog" aria-labelledby="productModalLabel19"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/NIKE+RUN+SWIFT+3.png" alt="Nike Run Swift 3" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productModal20" tabindex="-1" role="dialog" aria-labelledby="productModalLabel20"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="running-img/WMNS+NIKE+AIR+WINFLO+11.png" alt="Nike Winflo 11" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- Footer -->
+    <section class="w3l-footer-29-main">
+        <div class="footer-29 py-5">
+            <div class="container py-lg-4">
+                <div class="row footer-top-29">
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
+                        <div class="footer-logo mb-4">
+                            <a class="navbar-brand" href="index.html">H&T</a>
+                        </div>
+                        <p>We have always been a major and professional fashion brand...</p>
+                        <div class="main-social-footer-29 mt-4">
+                            <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+                            <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+                            <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+                            <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
+                        <ul>
+                            <h6 class="footer-title-29">Useful Links</h6>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#blog">Blog posts</a></li>
+                            <li><a href="#pricing">Pricing plans</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
+                        <h6 class="footer-title-29">Resources</h6>
+                        <ul>
+                            <li><a href="#traning">Training</a></li>
+                            <li><a href="#marketplace">Marketplace</a></li>
+                            <li><a href="#experts">Our Experts</a></li>
+                            <li><a href="#platform">Platform</a></li>
+                            <li><a href="#customers">Customers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
+                        <h6 class="footer-title-29">Instagram posts</h6>
+                        <div class="post1">
+                            <a href="#url" class="post-title">The products you should buy from the brand...</a>
+                            <p>nike, adidas, balencia, new balance...</p>
+                        </div>
+                        <div class="post1 mt-4">
+                            <a href="#url" class="post-title">Top brands you should choose...</a>
+                            <p>chanel, vans, gucci, nike...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="w3l-copyright text-center">
+            <div class="container">
+                <p class="copy-footer-29">© 2025 H&T. All rights reserved.</p>
+            </div>
+            <button id="cartButton" title="Go to cart"><i class="fa fa-shopping-cart"></i></button>
+            <button onclick="topFunction()" id="movetop" title="Go to top">⤴</button>
+        </section>
+    </section>
+
+    <!-- Scripts -->
+    <script src="du an 1/js/jquery-3.3.1.min.js"></script>
+    <script src="du an 1/js/circles.js"></script>
+    <script src="du an 1/js/owl.carousel.js"></script>
+    <script src="du an 1/js/bootstrap.min.js"></script>
+
+    <!-- React Navbar -->
+    <script type="text/babel">
+        const Navbar = () => {
+            const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('isLoggedIn') === 'true');
+            const [isCartOpen, setIsCartOpen] = React.useState(false);
+            const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('cartItems')) || []);
+
+            const currentPage = window.location.pathname;
+            const productPages = ["product.html", "running-products.html", "basketball-products.html", "football-products.html", "gym-products.html"];
+            const isProductsPage = productPages.some(page => currentPage.includes(page));
+
+            const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+
+            const toggleCart = () => setIsCartOpen(!isCartOpen);
+
+            const clearCart = () => {
+                setCart([]);
+                localStorage.setItem('cartItems', JSON.stringify([]));
+                alert('Đã xóa toàn bộ giỏ hàng!');
+            };
+
+            const removeItem = (index) => {
+                const newCart = [...cart];
+                newCart.splice(index, 1);
+                setCart(newCart);
+                localStorage.setItem('cartItems', JSON.stringify(newCart));
+            };
+
+            const addToCart = (name, price) => {
+                const newItem = { name, price: parseFloat(price), quantity: 1 };
+                const existingItem = cart.find(item => item.name === name);
+                let newCart = existingItem
+                    ? cart.map(item => item.name === name ? { ...item, quantity: item.quantity + 1 } : item)
+                    : [...cart, newItem];
+                setCart(newCart);
+                localStorage.setItem('cartItems', JSON.stringify(newCart));
+                setIsCartOpen(true);
+            };
+
+            window.addToCart = addToCart;
+
+            const handleLogin = () => window.location.href = "demologin.html";
+            const handleSignup = () => window.location.href = "demosignup.html";
+            const handleLogout = () => {
+                localStorage.setItem('isLoggedIn', 'false');
+                setIsLoggedIn(false);
+                alert('Logged out successfully!');
+            };
+
+            return (
+                <nav className="navbar navbar-expand-lg navbar-dark stroke">
+                    <h1><a className="navbar-brand" href="index.html">H&T</a></h1>
+                    <button className="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                        <span className="navbar-toggler-icon fa icon-close fa-times"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav ml-auto mr-5 align-items-center">
+                            <li className="nav-item"><a className={`nav-link ${currentPage.includes('index.html') ? 'active' : ''}`} href="index.html">Home</a></li>
+                            <li className="nav-item dropdown">
+                                <a className={`nav-link dropdown-toggle ${isProductsPage ? 'active-products' : ''}`} href="product.html" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Products {isProductsPage && <span className="sr-only">(current)</span>}
+                                </a>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a className="dropdown-item" href="product.html">Product</a>
+                                    <a className="dropdown-item" href="running-products.html">Running</a>
+                                    <a className="dropdown-item" href="basketball-products.html">Basketball</a>
+                                    <a className="dropdown-item" href="football-products.html">Football</a>
+                                    <a className="dropdown-item" href="gym-products.html">Gym</a>
+                                </div>
+                            </li>
+                            <li className="nav-item"><a className={`nav-link ${currentPage.includes('about.html') ? 'active' : ''}`} href="about.html">About</a></li>
+                            <li className="nav-item"><a className={`nav-link ${currentPage.includes('services.html') ? 'active' : ''}`} href="services.html">Services</a></li>
+                            <li className="nav-item"><a className={`nav-link ${currentPage.includes('contact.html') ? 'active' : ''}`} href="contact.html">Contact</a></li>
+                            <li className="nav-item cart-container">
+                                <div className="cart-icon">
+                                    <a href="#cart" className="nav-link" onClick={(e) => { e.preventDefault(); toggleCart(); }}>
+                                        <span className="fa fa-shopping-cart"></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <nav className="ml-lg-3">
+                                <div className="search-bar">
+                                    <form action="#" method="GET" className="search">
+                                        <input type="search" className="search__input" name="search" placeholder="Search here.." required />
+                                        <span className="fa fa-search search__icon"></span>
+                                    </form>
+                                </div>
+                            </nav>
+                            <li className="nav-item user-container">
+                                <div className="auth-buttons">
+                                    {isLoggedIn ? (
+                                        <div className="dropdown">
+                                            <button className="btn btn-profile">
+                                                <span className="fas fa-user"></span> Profile
+                                            </button>
+                                            <div className="dropdown-content">
+                                                <a href="profile.html">View Profile</a>
+                                                <button onClick={handleLogout}>Logout</button>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            <button className="btn btn-login" onClick={handleLogin}>Login</button>
+                                            <button className="btn btn-signup" onClick={handleSignup}>Signup</button>
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="cart-items" className={`cart-items ${isCartOpen ? 'active' : ''}`}>
+                        <h6>The cart</h6>
+                        <ul id="cart-list">
+                            {cart.length === 0 ? (
+                                <li>Giỏ hàng trống</li>
+                            ) : (
+                                cart.map((item, index) => (
+                                    <li key={index}>
+                                        <span>{item.name} (x{item.quantity}) - ${(item.price * item.quantity).toFixed(2)}</span>
+                                        <button className="btn btn-sm btn-danger remove-item" onClick={() => removeItem(index)}>Xóa</button>
+                                    </li>
+                                ))
+                            )}
+                        </ul>
+                        <div id="cart-total" className="mt-2">Tổng tiền: ${cartTotal}</div>
+                        <button id="clear-cart" className="btn btn-danger mt-3" onClick={clearCart}>Clear the entire cart.</button>
+                    </div>
+                </nav>
+            );
+        };
+        ReactDOM.render(<Navbar />, document.getElementById('react-root'));
+    </script>
+
+    <!-- Additional Scripts -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 80) $("#site-header").addClass("nav-fixed");
+            else $("#site-header").removeClass("nav-fixed");
+        });
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.onscroll = function () {
+            let topButton = document.getElementById("movetop");
+            let cartButton = document.getElementById("cartButton");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topButton.style.display = "block";
+                cartButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+                cartButton.style.display = "none";
+            }
+        };
+        document.getElementById("cartButton").onclick = function () {
+            window.location.href = "/shoppingcart/shoppingcart.html";
+        };
+        $(document).ready(function () {
+            $("#owl-demo1").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true
+            });
+            $('.accordion-item button').on('click', function () {
+                const content = $(this).next('.accordion-content');
+                const isExpanded = $(this).attr('aria-expanded') === 'true';
+                $('.accordion-content').slideUp();
+                $('.accordion-item button').attr('aria-expanded', 'false');
+                if (!isExpanded) {
+                    content.slideDown();
+                    $(this).attr('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

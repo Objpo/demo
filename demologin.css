@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Hình ảnh nền mới về giày sneaker */
+    background: url('https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Lớp phủ tối để làm nổi bật form */
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ nền */
+}
+
+.login-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); /* Hiệu ứng kính mờ (glassmorphism) */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5a5f; /* Màu đỏ hồng phù hợp với phong cách sneaker */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container button:hover {
+    background: #e04e52;
+}
+
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login p {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

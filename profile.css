@@ -1,0 +1,466 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+body.noscroll {
+    overflow: hidden;
+}
+/* Navbar Styling */
+header#site-header {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+header.nav-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: #ff0000;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header.nav-fixed .navbar-brand a,
+.navbar-brand a:hover {
+    color: #ff0000;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item.active .nav-link,
+.nav-link:hover {
+    color: #cc0000;
+}
+
+header.nav-fixed .nav-link {
+    color: #000000;
+}
+
+header.nav-fixed .nav-item.active .nav-link,
+header.nav-fixed .nav-link:hover {
+    color: #333333;
+}
+
+/* Hamburger Button */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 10px;
+    display: none;
+}
+
+.navbar-toggler .fa {
+    font-size: 20px;
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+.navbar-toggler:hover .fa {
+    color: #cc0000;
+}
+
+.navbar-toggler .icon-close {
+    display: none;
+}
+
+.navbar-toggler.collapsed .icon-expand {
+    display: inline-block;
+}
+
+.navbar-toggler.collapsed .icon-close {
+    display: none;
+}
+
+.navbar-toggler:not(.collapsed) .icon-expand {
+    display: none;
+}
+
+.navbar-toggler:not(.collapsed) .icon-close {
+    display: inline-block;
+}
+
+/* Navbar Collapse */
+.navbar-collapse {
+    display: none;
+}
+
+/* Cart, Search, and User Icons */
+.cart-icon,
+.user-icon {
+    padding: 10px;
+}
+
+.cart-icon .nav-link,
+.user-icon .nav-link {
+    color: #ff0000;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header.nav-fixed .cart-icon .nav-link,
+header.nav-fixed .user-icon .nav-link {
+    color: #000000;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search__input {
+    padding: 5px 30px 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    width: 150px;
+    transition: border-color 0.3s;
+}
+
+.search__input:focus {
+    border-color: #ff0000;
+}
+
+.search__icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+header.nav-fixed .search__icon {
+    color: #000000;
+}
+
+/* Cart Items Dropdown */
+.cart-items {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+    padding: 10px;
+    width: 300px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart-items.active {
+    display: block;
+}
+
+.cart-items h6 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.cart-items .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.cart-items .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Profile Page Styling */
+.container {
+    max-width: 900px;
+    margin: 100px auto 50px;
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-section,
+.password-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2,
+.password-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 5px;
+}
+
+.info-group {
+    margin-bottom: 20px;
+}
+
+.info-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.info-group input,
+.info-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.info-group input[readonly],
+.info-group select[disabled] {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.info-group input:focus,
+.info-group select:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+}
+
+/* Notification Styling */
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.notification.success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.notification.error {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Footer Buttons */
+.w3l-copyright {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+#cartButton {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+#cartButton:hover {
+    background-color: #cc0000;
+}
+
+#movetop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+#movetop:hover {
+    background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        padding: 10px 0;
+        align-items: center;
+        /* Căn giữa các mục theo chiều ngang */
+    }
+
+    .nav-item {
+        width: auto;
+        /* Đặt width auto để không chiếm toàn bộ chiều ngang */
+        text-align: center;
+        /* Căn giữa văn bản trong mỗi mục */
+    }
+
+    .nav-link {
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+        display: block;
+        /* Đảm bảo liên kết chiếm toàn bộ dòng */
+    }
+
+    .cart-icon,
+    .user-icon,
+    .search-bar {
+        margin: 10px 0;
+        /* Điều chỉnh margin để căn giữa */
+        text-align: center;
+        /* Căn giữa các biểu tượng và thanh tìm kiếm */
+    }
+
+    .cart-items {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .info-section,
+    .password-section {
+        width: 100%;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}

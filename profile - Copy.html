@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <!-- Thêm CSS chỉ cho logo -->
+    <style>
+        .navbar-brand {
+            font-family: 'Pacifico', cursive !important;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Phần còn lại của mã giữ nguyên -->
+
+    <body>
+        <!-- Header -->
+        <header id="site-header" class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark stroke">
+                <h1><a class="navbar-brand" href="index.html">H&T</a></h1>
+                <button class="navbar-toggler collapsed" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-auto mr-5 align-items-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item cart-container">
+                            <div class="cart-icon">
+                                <a href="#cart" class="nav-link"><span class="fa fa-shopping-cart"></span></a>
+                            </div>
+                        </li>
+                        <nav class="ml-lg-3">
+                            <div class="search-bar">
+                                <form action="#" method="GET" class="search">
+                                    <input type="search" class="search__input" name="search" placeholder="Search here.."
+                                        onload="equalWidth()" required>
+                                    <span class="fa fa-search search__icon"></span>
+                                </form>
+                            </div>
+                        </nav>
+                        <li class="nav-item user-container">
+                            <div class="user-icon">
+                                <a href="profile.html" class="nav-link"><span class="fas fa-user"></span></a>
+                            </div>
+                        </li>
+                        <div id="cart-items" class="cart-items">
+                            <h6>The cart</h6>
+                            <ul id="cart-list"></ul>
+                            <div id="cart-total" class="mt-2">Total amount: $0</div>
+                            <button id="clear-cart" class="btn btn-danger mt-3">Clear the entire cart.</button>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Profile Content -->
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-content">
+                    <div class="info-section">
+                        <h2>Personal Information</h2>
+                        <div class="info-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" value="Nguyen Van A" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Email</label>
+                            <input type="email" id="email" value="nguyenvana@gmail.com" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" value="0123 456 789" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Address</label>
+                            <input type="text" id="address" value="123 Lang Street, Hanoi" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Date of Birth</label>
+                            <input type="date" id="dob" value="1990-01-01" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Gender</label>
+                            <select id="gender" disabled>
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button class="btn edit-btn">Edit Profile</button>
+                    </div>
+
+                    <div class="password-section">
+                        <h2>Change Password</h2>
+                        <div class="info-group">
+                            <label>Current Password</label>
+                            <input type="password" id="currentPassword" placeholder="Enter current password">
+                        </div>
+                        <div class="info-group">
+                            <label>New Password</label>
+                            <input type="password" id="newPassword" placeholder="Enter new password">
+                        </div>
+                        <div class="info-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                        </div>
+                        <button class="btn update-btn">Update Password</button>
+                    </div>
+                </div>
+                <div id="notification" class="notification"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <section class="w3l-copyright text-center">
+            <button id="cartButton" title="Go to cart"><i class="fa fa-shopping-cart"></i></button>
+            <button onclick="topFunction()" id="movetop" title="Go to top">⤴</button>
+        </section>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="profile.js"></script>
+    </body>
+
+    </html>

@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-    <title>du an</title>
+    <title>Home - H&T</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -15,68 +14,197 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="du an 1/css/bai.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+
+<!-- css nut login signup -->
+<style>
+    /* Auth buttons styling - ensure they're always horizontal */
+        .auth-buttons {
+            display: flex;
+            flex-direction: row; /* Always horizontal */
+            align-items: center;
+            justify-content: flex-end; /* Align to the right */
+            min-width: 180px; /* Ensure minimum width for buttons */
+        }
+
+        .auth-buttons .btn-login,
+        .auth-buttons .btn-signup {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .auth-buttons .btn-login {
+            background-color: #ff4d4d;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .auth-buttons .btn-login:hover {
+            background-color: #e60000;
+        }
+
+        .auth-buttons .btn-signup {
+            background-color: #333;
+            color: white;
+        }
+
+        .auth-buttons .btn-signup:hover {
+            background-color: #555;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-container.active {
+                max-height: 300px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-menu li {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            /* Keep auth buttons horizontal even on mobile */
+            .auth-buttons {
+                flex-direction: row;
+                padding: 0 10px;
+                justify-content: center;
+            }
+        }
+     /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kumbh Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+         /* Dropdown styling for Profile */
+        .auth-buttons .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .auth-buttons .btn-profile {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #ff4d4d;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-buttons .btn-profile:hover {
+            background-color: #e60000;
+        }
+
+        .auth-buttons .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .auth-buttons .dropdown-content a,
+        .auth-buttons .dropdown-content button {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .auth-buttons .dropdown-content a:hover,
+        .auth-buttons .dropdown-content button:hover {
+            background-color: #f1f1f1;
+            color: #ff4d4d;
+        }
+
+        .auth-buttons .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    
+</style>
 </head>
 
 <body>
-
-<!--header-->
-<header id="site-header" class="fixed-top">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark stroke">
-            <h1><a class="navbar-brand" href="index.html">H&T</a></h1>
-            <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse"
-                data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav ml-auto mr-5 align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item @@product">
-                        <a class="nav-link" href="product.html">Products</a>
-                    </li>
-                    <li class="nav-item @@about__active">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    
-                    <li class="nav-item @@services__active">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-
-                    <li class="nav-item @@contact__active">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item cart-container">
-                        <div class="cart-icon">
-                            <a href="#cart" class="nav-link">
-                                <span class="fa fa-shopping-cart"></span>
-                            </a>
-                        </div>
-                    </li>
-                    <nav class="ml-lg-3">
-                        <div class="search-bar">
-                            <form action="#" method="GET" class="search">
-                                <input type="search" class="search__input" name="search" placeholder="Search here.."
-                                    onload="equalWidth()" required>
-                                <span class="fa fa-search search__icon"></span>
-                            </form>
-                        </div>
-                    </nav>
-                    <div id="cart-items" class="cart-items">
-                        <h6>The cart</h6>
-                        <ul id="cart-list"></ul>
-                        <div id="cart-total" class="mt-2">Total amount: $0</div>
-                        <button id="clear-cart" class="btn btn-danger mt-3">Clear the entire cart.</button>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <!-- React will render the navbar here -->
+            <div id="react-root"></div>
+        </div>
+    </header>
     <!-- banner section -->
     <section id="home" class="w3l-banner py-5">
         <div class="container py-lg-5 mt-lg-5">
@@ -92,617 +220,93 @@
     </section>
 
     <!-- //banner section -->
-    <!-- /bottom-grids-->
-    <section class="w3l-bottom-grids-6 py-5" id="bottom">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <h3 class="title-big text-center mb-5">Best Seller</h3>
-            <div class="grids-area-hny main-cont-wthree-fea row">
-                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                    <div class="area-box">
-                        <figure>
-                            <img src="img/giày 2.jpg" alt="product" class="img-fluid" />
-                            <h4><a href="#feature" class="title-head">Nike Court Air Zoom Vapor Pro</a></h4>
-                            <p class="">The shoe's form features extremely sturdy and meticulous stitching that
-                                satisfies
-                                all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
-                            <p class="price"><strong>Price: $120</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy" data-price="120">Buy Now</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#bestSellerModal1">View</button>
-                            </div>
-                        </figure>
+    <section class="w3l-aboutblock1" id="about">
+        <div class="midd-w3 py-5">
+            <div class="container py-lg-5 py-md-3 py-2">
+                <div class="row">
+                    <div class="col-lg-6 mb-lg-0 mb-md-5 mb-5 align-self">
+                        <h3 class="title-big mx-0">The Inspiring Journey of H&T</h3>
+                        <p class="mt-md-4 mt-3">In the damp, dimly lit alleyways of a poor working-class neighborhood,
+                            where the faint yellow glow of street lamps
+                            barely penetrated the old, corrugated iron roofs, three young men, Gia Huy, Khai Tuong, and
+                            Khanh Huy, grew up together.
+                            They were close friends, sharing dreams and aspirations for a brighter future.
+
+                            Gia Huy, with his star-bright eyes, always carried unique creative ideas. He had a talent
+                            for design, especially for
+                            athletic shoes. Khai Tuong, with his skillful hands and meticulous attention to detail, was
+                            a seasoned shoemaker. He
+                            could turn Gia Huy's sketches into high-quality shoes. And Khanh Huy, quick-witted and
+                            energetic, possessed a gift for
+                            gab and salesmanship. He always knew how to attract customers and persuade them to buy their
+                            products.
+
+                            One day, while chatting at their usual sidewalk cafe, they decided to start their own
+                            athletic shoe company. They named
+                            it H&T, an acronym of their names, as a testament to their bond and determination.
+
+                            H&T's beginnings were incredibly challenging. They had no capital, no experience, and no
+                            connections. They had to do
+                            everything themselves, from designing and manufacturing to selling. Gia Huy spent countless
+                            hours sketching unique and
+                            innovative shoe designs, drawing inspiration from familiar streets and the everyday stories
+                            of working-class people.
+                            Khai Tuong diligently crafted each pair of shoes with precision and care, paying attention
+                            to every stitch. And Khanh
+                            Huy roamed the streets, introducing and selling H&T shoes.
+
+                            H&T shoes gradually gained recognition and popularity. Their good quality, beautiful
+                            designs, and affordable prices were
+                            their standout advantages. However, their entrepreneurial journey was far from smooth. They
+                            faced numerous difficulties
+                            and challenges.
+
+                            First, there was the issue of capital. They lacked the funds to purchase quality materials
+                            and rent a production space.
+                            They had to resort to cheap, unreliable materials and work in a cramped rented room.
+
+                            Next came the competition. The athletic shoe market was crowded with competitors, from
+                            established big brands to
+                            small-scale workshops. They had to find ways to differentiate themselves and attract
+                            customers.
+
+                            Finally, there were the financial and personnel challenges. They had to manage their cash
+                            flow tightly and recruit
+                            talented and dedicated employees.
+
+                            But with determination, perseverance, and teamwork, the three young men overcame every
+                            obstacle. They never stopped
+                            learning, innovating, and improving to grow H&T. They took business courses, studied market
+                            and fashion trends, and
+                            invested in modern manufacturing technology.
+
+                            They also built a young, dynamic, and passionate team. They created a comfortable work
+                            environment that encouraged
+                            creativity.
+
+                            After years of hard work, H&T became a renowned and beloved athletic shoe brand. H&T shoes
+                            were not only sold in Vietnam
+                            but also exported to many countries worldwide.
+
+                            Gia Huy, Khai Tuong, and Khanh Huy proved that with passion, hard work, and teamwork, young
+                            people from humble
+                            backgrounds can achieve success. H&T is not just a shoe brand, but a symbol of the
+                            aspiration and ambition of Vietnamese
+                            youth.
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                    <div class="area-box">
-                        <figure>
-                            <img src="img/jordan 11.jpg" alt="product" class="img-fluid" />
-                            <h4><a href="#feature" class="title-head">Jordan 11 Space Jam</a></h4>
-                            <p class="">The shoe's form features extremely sturdy and meticulous stitching that
-                                satisfies
-                                all customers. The sole has a high friction level to reduce slipping for the wearer.</p>
-                            <p class="price"><strong>Price: $220</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy" data-price="220">Buy now</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#bestSellerModal2">View</button>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 grids-feature">
-                    <div class="area-box">
-                        <figure>
-                            <img src="img/giay 3.jpg" alt="product" class="img-fluid" />
-                            <h4><a href="#feature" class="title-head">Nike Air Force 1 '07 LV8</a></h4>
-                            <p class="">This shoe model retains the distinctive features of the Air Force 1 but with
-                                updated
-                                details, suitable for both sports and street fashion styles.</p>
-                            <p class="price"><strong>Price: $110</strong></p>
-                            <div class="button-group mt-3">
-                                <button class="btn btn-primary btn-buy" data-price="110">Buy now</button>
-                                <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                    data-target="#bestSellerModal3">View</button>
-                            </div>
-                        </figure>
+                    <div class="col-lg-6">
+                        <div class="position-relative">
+                            <img src="img/image (1).jpg" alt="" class="radius-image-full img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modals cho Best Seller -->
-    <div class="modal fade" id="bestSellerModal1" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/giày 2.jpg" alt="Nike Court Air Zoom Vapor Pro" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="bestSellerModal2" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/jordan 11.jpg" alt="Jordan 11 Space Jam" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="bestSellerModal3" tabindex="-1" role="dialog" aria-labelledby="bestSellerModalLabel3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/giay 3.jpg" alt="Nike Air Force 1 '07 LV8" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //bottom-grids-->
     <script src="/du an 1/js/bootstrap.min.js"></script>
     <script src="/du an 1/js/jquery-3.3.1.min.js"></script>
-    <!-- //bottom-grids-->
-    <!--//gallery1-->
-    <section class="w3l-portfolio-8 py-5">
-        <div class="portfolio-main py-lg-5 py-md-4 py-2">
-            <div class="container">
-                <div class="col-12 text-center mb-4">
-                    <h3 class="title-big">Male Products</h3>
-                </div>
-                <div class="row galler-top">
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike zoom fly.jpg" alt="product" class="img-fluid" />
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Air Zoom Fly 3</a>
-                                <p class="price"><strong>Price: $100</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="100">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal1">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike pegasus.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Air Zoom Pegasus 40</a>
-                                <p class="price"><strong>Price: $157</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="157">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal2">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike zoom vapo.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike ZoomX Vaporfly Next%</a>
-                                <p class="price"><strong>Price: $148</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="148">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal3">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike air mã.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Air Max 95</a>
-                                <p class="price"><strong>Price: $190</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="190">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal4">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/new balance.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">New Balance 990v4</a>
-                                <p class="price"><strong>Price: $209,99</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="209.99">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal5">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/balencia.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Balenciaga Triple S</a>
-                                <p class="price"><strong>Price: $1100</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="1100">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal6">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike retro.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Air Jordan 4 Retro</a>
-                                <p class="price"><strong>Price: $215</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="215">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal7">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/puma  thunder.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Puma Thunder Spectra</a>
-                                <p class="price"><strong>Price: $120.00</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="120">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#imageModal8">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//gallery1-->
 
-    <!-- Modals cho từng ảnh -->
-    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike zoom fly.jpg" alt="UI experience" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike pegasus.jpg" alt="Wordpress" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike zoom vapo.jpg" alt="Ecommerce" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike air mã.jpg" alt="Headphones" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal5" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel5"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/new balance.jpg" alt="Mobile app" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal6" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel6"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/balencia.jpg" alt="Modern Ideas" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal7" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel7"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike retro.jpg" alt="Creativity" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="imageModal8" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel8"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/puma  thunder.jpg" alt="Fashion design" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--//gallery2-->
-    <section class="w3l-portfolio-8 py-5" id="moreservices">
-        <div class="portfolio-main py-lg-5 py-md-4 py-2">
-            <div class="container">
-                <div class="col-12 text-center mb-4">
-                    <h3 class="title-big">Female Products</h3>
-                </div>
-                <div class="row galler-top">
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nike winflo.jpg" alt="product" class="img-fluid" />
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Winflo 11</a>
-                                <p class="price"><strong>Price: $120</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="120">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal1">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/puma bella.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Puma Bella</a>
-                                <p class="price"><strong>Price: $150</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="150">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal2">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/mlb.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">MLB Bigball Chunky Window Monogram</a>
-                                <p class="price"><strong>Price: $179,89</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="179.89">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal3">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nữ 1.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low Disrupt 2</a>
-                                <p class="price"><strong>Price: $66</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="66">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal4">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nữ 2.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Sneaker Nike Wmns Air Jordan 1 Mid</a>
-                                <p class="price"><strong>Price: $306</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="306">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal5">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nữ 3.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Sneaker Nike Wmns Dunk Low</a>
-                                <p class="price"><strong>Price: $212</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="212">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal6">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nữ 4.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Wmns Air Jordan 1 Zoom Air Comfort High</a>
-                                <p class="price"><strong>Price: $265</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="265">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal7">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 protfolio-item hover14">
-                        <figure>
-                            <img src="img/nữ 5.jpg" alt="product" class="img-fluid">
-                            <div class="img-info">
-                                <a href="#url" class="img-title">Nike Wmns Blazer Low '77 Jumbo White Pink Oxford</a>
-                                <p class="price"><strong>Price: $188</strong></p>
-                                <div class="button-group mt-3">
-                                    <button class="btn btn-primary btn-buy" data-price="188">Buy</button>
-                                    <button class="btn btn-secondary btn-view" data-toggle="modal"
-                                        data-target="#moreImageModal8">View</button>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//gallery2-->
-
-    <!-- Modals cho từng ảnh trong Gallery 2 -->
-    <div class="modal fade" id="moreImageModal1" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nike winflo.jpg" alt="Nike Dunk Low" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal2" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/puma bella.jpg" alt="Adidas Yeezy Boost 350" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal3" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 1.jpg" alt="Converse Chuck Taylor" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal4" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel4"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 2.jpg" alt="Vans Old Skool" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal5" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel5"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 3.jpg" alt="Asics Gel-Kayano" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal6" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel6"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 4.jpg" alt="Reebok Classic Leather" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal7" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel7"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 5.jpg" alt="Under Armour HOVR" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="moreImageModal8" tabindex="-1" role="dialog" aria-labelledby="moreImageModalLabel8"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/nữ 6.jpg" alt="Saucony Jazz Original" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="w3l-servicesblock py-5" id="services">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="row">
-                <div class="col-lg-6 about-right-faq align-self">
-                    <h3 class="title-big"> The number of customers buying shoes in 2024</h3>
-                    <div class="progress-info info1">
-                        <h6 class="progress-tittle">NIKE <span class="">150.000</span></h6>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%"
-                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-info info2">
-                        <h6 class="progress-tittle">H&T <span class="">300.000</span>
-                        </h6>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%"
-                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-info info3">
-                        <h6 class="progress-tittle">Adidas <span class="">200.000</span></h6>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%"
-                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-info info4 mb-0">
-                        <h6 class="progress-tittle">Chanel <span class="">100.000</span></h6>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%"
-                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 left-wthree-img mt-lg-0 mt-5">
-                    <img src="img/progress.jpg" alt="" class="img-fluid radius-image">
-                </div>
-            </div>
-        </div>
-    </section>
     <!--  News section -->
     <div class="w3l-news" id="news">
         <section id="grids5-block" class="py-5">
@@ -714,7 +318,7 @@
                             <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 1.jpg" alt=""
                                     class="img-fluid news-image" /></a>
                             <div class="blog-info">
-                                <h4><a href="#blog-single">trends in shoe choices among young people</a></h4>
+                                <h4><a href="#blog-single">Trends in shoe choices among young people</a></h4>
                                 <p class="date"><span class="fa fa-calendar mr-2"></span> September 17, 2024</p>
                                 <p>Young people choose affordable fashion brands.</p>
                                 <a href="#blog-single" class="btn btn-news mt-4">Read More</a>
@@ -726,7 +330,7 @@
                             <a href="#blog-single" class="d-block zoom"><img src="img/bai bao 2.jpg" alt=""
                                     class="img-fluid news-image" /></a>
                             <div class="blog-info">
-                                <h4><a href="#blog-single">emerging fashion brands recently</a></h4>
+                                <h4><a href="#blog-single">Emerging fashion brands recently</a></h4>
                                 <p class="date"><span class="fa fa-calendar mr-2"></span> june 17, 2024</p>
                                 <p>There are fashion brands that have recently emerged due to their prices being
                                     affordable.</p>
@@ -872,6 +476,7 @@
             </div>
         </div>
     </section>
+
     <!-- //home page about section -->
 
     <div class="w3l-faq-block py-5" id="faq">
@@ -968,7 +573,6 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
-
                         <ul>
                             <h6 class="footer-title-29">Useful Links</h6>
                             <li><a href="about.html">About Us</a></li>
@@ -987,7 +591,6 @@
                             <li><a href="#platform">Platform</a></li>
                             <li><a href="#customers"> Customers</a></li>
                         </ul>
-
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
                         <h6 class="footer-title-29">Instagram posts</h6>
@@ -1003,61 +606,274 @@
                 </div>
             </div>
         </div>
-        <!-- copyright -->
         <section class="w3l-copyright text-center">
             <div class="container">
-                <p class="copy-footer-29">/a></p>
+                <p class="copy-footer-29">© 2025 H&T. All rights reserved.</p>
             </div>
-
-            <!-- move top -->
-            <button onclick="topFunction()" id="movetop" title="Go to top">
-                &#10548;
-            </button>
-            <script>
-                // When the user scrolls down 20px from the top of the document, show the button
-                window.onscroll = function () {
-                    scrollFunction()
-                };
-
-                function scrollFunction() {
-                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                        document.getElementById("movetop").style.display = "block";
-                    } else {
-                        document.getElementById("movetop").style.display = "none";
-                    }
-                }
-
-                // When the user clicks on the button, scroll to the top of the document
-                function topFunction() {
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                }
-            </script>
-            <!-- /move top -->
+            <button id="cartButton" title="Go to cart"><i class="fa fa-shopping-cart"
+                    href="shoppingcart.html"></i></button>
+            <button onclick="topFunction()" id="movetop" title="Go to top">⤴</button>
+            </div>
+            </div>
         </section>
-        <!-- //copyright -->
-    </section>
-    <!-- //footer -->
-
+        
+        <style>
+            #cartButton {
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: palevioletred;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 50%;
+            }
+        
+            #cartButton:hover {
+                background-color: red;
+            }
+        
+            #movetop {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: palevioletred;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 50%;
+            }
+        
+            #movetop:hover {
+                background-color: red;
+            }
+        </style>
+        
+        <script>
+            function topFunction() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            window.onscroll = function () {
+                let topButton = document.getElementById("movetop");
+                let cartButton = document.getElementById("cartButton");
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    topButton.style.display = "block";
+                    cartButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                    cartButton.style.display = "none";
+                }
+            };
+            document.getElementById("cartButton").onclick = function () {
+                window.location.href = "shopping_cart.html";
+            };
+        </script>
+        </section>
+        </section>
+        
     <script src="du an 1/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
     <script src="du an 1/js/circles.js"></script>
     <script src="du an 1/js/owl.carousel.js"></script>
     <script src="du an 1/js/bootstrap.min.js"></script> <!-- Bootstrap CDN -->
+        <script>
+            $(window).on("scroll", function () {
+                var scroll = $(window).scrollTop();
+                if (scroll >= 80) {
+                    $("#site-header").addClass("nav-fixed");
+                } else {
+                    $("#site-header").removeClass("nav-fixed");
+                }
+            });
+            $(".navbar-toggler").on("click", function () {
+                $("header").toggleClass("active");
+            });
+        </script>
+    <!-- React-->
+    <script type="text/babel">
+        const Navbar = () => {
+            const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('isLoggedIn') === 'true');
+            const [isCartOpen, setIsCartOpen] = React.useState(false);
+            const [cart, setCart] = React.useState(JSON.parse(localStorage.getItem('cartItems')) || []);
 
-    <script>
-        const items = document.querySelectorAll(".accordion button");
-        function toggleAccordion() {
-            const itemToggle = this.getAttribute('aria-expanded');
-            for (i = 0; i < items.length; i++) {
-                items[i].setAttribute('aria-expanded', 'false');
-            }
-            if (itemToggle == 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            }
-        }
-        items.forEach(item => item.addEventListener('click', toggleAccordion));
+            const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+
+            const toggleCart = () => {
+                setIsCartOpen(!isCartOpen);
+            };
+
+            const clearCart = () => {
+                setCart([]);
+                localStorage.setItem('cartItems', JSON.stringify([]));
+                alert('Đã xóa toàn bộ giỏ hàng!');
+            };
+
+            const removeItem = (index) => {
+                const newCart = [...cart];
+                newCart.splice(index, 1);
+                setCart(newCart);
+                localStorage.setItem('cartItems', JSON.stringify(newCart));
+            };
+
+            const addToCart = (product) => {
+                const existingItem = cart.find(item => item.name === product.name);
+                let newCart;
+                if (existingItem) {
+                    newCart = cart.map(item =>
+                        item.name === product.name
+                            ? { ...item, quantity: item.quantity + 1 }
+                            : item
+                    );
+                } else {
+                    newCart = [...cart, { ...product, quantity: 1 }];
+                }
+                setCart(newCart);
+                localStorage.setItem('cartItems', JSON.stringify(newCart));
+                alert(`${product.name} đã được thêm vào giỏ hàng!`);
+            };
+
+            const handleLogin = () => {
+                window.location.href = "demologin.html";
+            };
+
+            const handleSignup = () => {
+                window.location.href = "demosignup.html";
+            };
+
+            const handleLogout = () => {
+                localStorage.setItem('isLoggedIn', 'false');
+                setIsLoggedIn(false);
+                alert('Logged out successfully!');
+            };
+
+            // Gắn sự kiện cho các nút Buy
+            React.useEffect(() => {
+                const buyButtons = document.querySelectorAll('.btn-buy');
+                buyButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const product = JSON.parse(button.getAttribute('data-product'));
+                        addToCart(product);
+                    });
+                });
+
+                // Cleanup để tránh gắn nhiều listener
+                return () => {
+                    buyButtons.forEach(button => {
+                        button.removeEventListener('click', () => { });
+                    });
+                };
+            }, [cart]);
+
+            return (
+                <nav className="navbar navbar-expand-lg navbar-dark stroke">
+                    <h1><a className="navbar-brand" href="index.html">H&T</a></h1>
+                    <button
+                        className="navbar-toggler collapsed bg-gradient"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarTogglerDemo02"
+                        aria-controls="navbarTogglerDemo02"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                        <span className="navbar-toggler-icon fa icon-close fa-times"></span>
+                    </button>
+
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav ml-auto mr-5 align-items-center">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Products
+                                </a>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a className="dropdown-item" href="product.html">Product</a>
+                                    <a className="dropdown-item" href="running-products.html">Running</a>
+                                    <a className="dropdown-item" href="basketball-products.html">Basketball</a>
+                                    <a className="dropdown-item" href="football-products.html">Football</a>
+                                    <a className="dropdown-item" href="gym-products.html">Gym</a>
+                                </div>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="about.html">About</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="services.html">Services</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="contact.html">Contact</a>
+                            </li>
+                            <li className="nav-item cart-container">
+                                <div className="cart-icon">
+                                    <a href="#cart" className="nav-link" onClick={(e) => { e.preventDefault(); toggleCart(); }}>
+                                        <span className="fa fa-shopping-cart"></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <nav className="ml-lg-3">
+                                <div className="search-bar">
+                                    <form action="#" method="GET" className="search">
+                                        <input type="search" className="search__input" name="search" placeholder="Search here.." required />
+                                        <span className="fa fa-search search__icon"></span>
+                                    </form>
+                                </div>
+                            </nav>
+                            <li className="nav-item user-container">
+                                <div className="auth-buttons">
+                                    {isLoggedIn ? (
+                                        <div className="dropdown">
+                                            <button className="btn btn-profile">
+                                                <span className="fas fa-user"></span> Profile
+                                            </button>
+                                            <div className="dropdown-content">
+                                                <a href="profile.html">View Profile</a>
+                                                <button onClick={handleLogout}>Logout</button>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            <button className="btn btn-login" onClick={handleLogin}>Login</button>
+                                            <button className="btn btn-signup" onClick={handleSignup}>Signup</button>
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                            <div id="cart-items" className={`cart-items ${isCartOpen ? 'active' : ''}`}>
+                                <h6>The cart</h6>
+                                <ul id="cart-list">
+                                    {cart.length === 0 ? (
+                                        <li>Giỏ hàng trống</li>
+                                    ) : (
+                                        cart.map((item, index) => (
+                                            <li key={index}>
+                                                <span>{item.name} (x{item.quantity}) - ${(item.price * item.quantity).toFixed(2)}</span>
+                                                <button className="btn btn-sm btn-danger remove-item" onClick={() => removeItem(index)}>Xóa</button>
+                                            </li>
+                                        ))
+                                    )}
+                                </ul>
+                                <div id="cart-total" className="mt-2">Tổng tiền: ${cartTotal}</div>
+                                <button id="clear-cart" className="btn btn-danger mt-3" onClick={clearCart}>Clear the entire cart.</button>
+                            </div>
+                        </ul>
+                    </div>
+                </nav>
+            );
+        };
+
+        ReactDOM.render(<Navbar />, document.getElementById('react-root'));
     </script>
-
     <script>
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
@@ -1071,110 +887,27 @@
         $(".navbar-toggler").on("click", function () {
             $("header").toggleClass("active");
         });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function () {
+            let topButton = document.getElementById("movetop");
+            let cartButton = document.getElementById("cartButton");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                topButton.style.display = "block";
+                cartButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+                cartButton.style.display = "none";
             }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
+        };
+
+        document.getElementById("cartButton").onclick = function () {
+            window.location.href = "shopping_cart.html";
+        };
     </script>
-
-    <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            });
-        });
-    </script>
-
-    <!-- Script cho giỏ hàng với số lượng, tổng giá, và xóa từng sản phẩm -->
-    <script>
-        $(document).ready(function () {
-            // Hàm load giỏ hàng từ LocalStorage
-            function loadCart() {
-                const cartList = $('#cart-list');
-                const cartTotal = $('#cart-total');
-                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                cartList.empty();
-
-                if (cartItems.length === 0) {
-                    cartList.append('<li>The cart is empty.</li>');
-                    cartTotal.text('Total amount: $0');
-                } else {
-                    let total = 0;
-                    cartItems.forEach((item, index) => {
-                        const itemTotal = item.price * item.quantity;
-                        total += itemTotal;
-                        const li = $(`
-              <li>
-                <span>${item.name} (x${item.quantity}) - $${itemTotal.toFixed(2)}</span>
-                <button class="btn btn-sm btn-danger remove-item" data-index="${index}">Delete</button>
-              </li>
-            `);
-                        cartList.append(li);
-                    });
-                    cartTotal.text(`Total amount: $${total.toFixed(2)}`);
-                }
-            }
-
-            // Hàm lưu giỏ hàng vào LocalStorage
-            function saveCart(cartItems) {
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            }
-
-            // Hàm thêm sản phẩm vào giỏ hàng
-            function addToCart(name, price) {
-                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                const existingItem = cartItems.find(item => item.name === name);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cartItems.push({ name: name, price: price, quantity: 1 });
-                }
-
-                saveCart(cartItems);
-                loadCart();
-                alert(`Added "${name}" to the cart!`);
-            }
-
-            // Load giỏ hàng khi trang tải
-            loadCart();
-
-            // Toggle giỏ hàng khi nhấp vào biểu tượng
-            $('.cart-icon a').on('click', function (e) {
-                e.preventDefault();
-                $('#cart-items').toggleClass('active');
-            });
-
-            // Thêm sản phẩm khi nhấp vào nút Buy
-            $('.btn-buy').on('click', function () {
-                const productTitle = $(this).closest('.area-box, .img-info').find('.title-head, .img-title').text();
-                const price = parseFloat($(this).data('price'));
-                addToCart(productTitle, price);
-            });
-
-            // Xóa từng sản phẩm
-            $('#cart-list').on('click', '.remove-item', function () {
-                const index = $(this).data('index');
-                const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                cartItems.splice(index, 1);
-                saveCart(cartItems);
-                loadCart();
-            });
-
-            // Xóa toàn bộ giỏ hàng
-            $('#clear-cart').on('click', function () {
-                localStorage.removeItem('cartItems');
-                loadCart();
-                alert('The cart has been cleared!');
-            });
-        });
-    </script>
-</body>
-
-</html>
+    </body>
+    
+    </html>
